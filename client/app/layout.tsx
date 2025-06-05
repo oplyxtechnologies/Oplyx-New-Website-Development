@@ -4,6 +4,7 @@ import localFont from "next/font/local"; // ✅ FIXED
 
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 // Panchang custom font
 const panchang = localFont({
@@ -48,6 +49,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
