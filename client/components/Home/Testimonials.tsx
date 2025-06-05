@@ -13,7 +13,7 @@ const testimonials = [
   {
     name: "Elena M.",
     location: "Berlin",
-    text: "Their UI/UX design transformed our app’s user experience. Clear communication, on-time delivery, and real attention to detail.",
+    text: "Their UI/UX design transformed our apps user experience. Clear communication, on-time delivery, and real attention to detail.",
     rating: 5,
     image: "/testimonials/elena.png",
   },
