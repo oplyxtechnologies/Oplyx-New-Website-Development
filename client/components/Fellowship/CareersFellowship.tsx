@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const CareersHero = () => {
+const FellowshipHero = () => {
   return (
     <section className="relative bg-[#08121b] text-white py-32 px-6 md:px-12 overflow-hidden min-h-[90vh]">
       {/* Background Image */}
@@ -21,17 +21,16 @@ const CareersHero = () => {
         {/* Left Content */}
         <div className="text-left">
           <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
-            Build the Future <br /> With Us
+            Start Your Tech Journey with <br />
+            Oplyx Fellowship
           </h1>
           <p className="text-base md:text-md text-white/80 mb-6 max-w-md">
-            At Oplyx, we&apos;re a team of innovators crafting bold digital
-            solutions. If you&apos;re a developer, designer, or creative thinker
-            who thrives in a fast-paced, collaborative environment we&apos;d
-            love to work with you.
+            An 8-week hands-on learning experience for aspiring developers,
+            designers, and digital creators mentored by the Oplyx team.
           </p>
           <Link href="/careers#open-roles">
             <button className="px-6 py-2 bg-white text-black rounded hover:bg-gray-200 transition font-medium">
-              Explore Open Roles →
+              Apply Now →
             </button>
           </Link>
         </div>
@@ -52,4 +51,4 @@ const CareersHero = () => {
   );
 };
 
-export default CareersHero;
+export default FellowshipHero;

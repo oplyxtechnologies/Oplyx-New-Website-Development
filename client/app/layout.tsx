@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable}  ${geistMono.variable} ${panchang.variable} antialiased`}
+        className={`${geistSans.variable}  ${geistMono.variable} ${panchang.variable} tracking-wide antialiased`}
       >
         <Navbar />
         {children}
