@@ -52,7 +52,7 @@ const coreValues = [
 
 const CoreValuesSection = () => {
   return (
-    <section className="relative bg-[#08121b] text-white py-24 px-6 md:px-12 overflow-hidden">
+    <section className="relative  text-white py-24 px-6 md:px-12 overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <Image

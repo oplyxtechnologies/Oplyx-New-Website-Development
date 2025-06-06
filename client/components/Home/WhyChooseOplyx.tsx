@@ -1,6 +1,8 @@
 "use client";
 
 import { DollarSign, Timer, TrendingUp, Code2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const benefits = [
   {
@@ -28,6 +30,8 @@ const benefits = [
 ];
 
 const WhyChooseOplyx = () => {
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
   return (
     <section className="bg-[#08121b] text-white py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto text-center">
@@ -38,10 +42,16 @@ const WhyChooseOplyx = () => {
           Tailored digital services to help your business grow.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {benefits.map((benefit) => (
-            <div
+        <div
+          ref={ref}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto"
+        >
+          {benefits.map((benefit, index) => (
+            <motion.div
               key={benefit.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
               className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-lg p-6 text-left hover:bg-white/10 transition duration-300"
             >
               <div className="mt-1">{benefit.icon}</div>
@@ -51,7 +61,7 @@ const WhyChooseOplyx = () => {
                   {benefit.description}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

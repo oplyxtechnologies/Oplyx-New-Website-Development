@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const AboutHero = () => {
   return (
-    <section className="relative bg-[#08121b] h-[90vh] text-white overflow-hidden">
+    <section className="relative h-screen  text-white overflow-hidden">
       {/* Background Image */}
       <div className="inset-0 -z-40">
         <Image

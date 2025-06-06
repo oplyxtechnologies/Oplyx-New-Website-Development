@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 interface BlogPost {
   title: string;
@@ -27,6 +29,8 @@ const blogPosts: BlogPost[] = [
 ];
 
 const HomeBlogSection = () => {
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
   return (
     <section className="bg-[#08121b] text-white py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto text-center">
@@ -37,10 +41,16 @@ const HomeBlogSection = () => {
           Tailored digital services to help your business grow.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12">
+        <div
+          ref={ref}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-12"
+        >
           {blogPosts.map((post, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 40 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
               className="border border-white/10 rounded-lg p-6 text-left bg-white/5 backdrop-blur-sm hover:bg-white/10 transition"
             >
               <span className="inline-block text-xs px-3 py-1 mb-4 bg-white text-black rounded-full font-medium">
@@ -57,7 +67,7 @@ const HomeBlogSection = () => {
               >
                 Read More →
               </Link>
-            </div>
+            </motion.div>
           ))}
         </div>
 

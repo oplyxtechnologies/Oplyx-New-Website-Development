@@ -10,6 +10,8 @@ import {
   CloudCog,
   ActivitySquare,
 } from "lucide-react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const services = [
   {
@@ -63,7 +65,22 @@ const services = [
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
+
 const ExpertiseSection = () => {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+
   return (
     <section className="bg-[#08121b] text-white py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto text-center">
@@ -74,19 +91,30 @@ const ExpertiseSection = () => {
           Services that drive innovation and scalability.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <Link key={service.title} href={service.href} className="group">
-              <div className="bg-white/5 border border-white/10 rounded-lg p-6 text-left backdrop-blur-sm hover:bg-white/10 transition duration-300 group-hover:scale-[1.02]">
-                <div className="mb-4">{service.icon}</div>
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-white">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            </Link>
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          ref={ref}
+        >
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              custom={index}
+              variants={cardVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+            >
+              <Link href={service.href} className="group block">
+                <div className="bg-white/5 border border-white/10 rounded-lg p-6 text-left backdrop-blur-sm hover:bg-white/10 transition duration-300 group-hover:scale-[1.02]">
+                  <div className="mb-4">{service.icon}</div>
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-white">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-gray-300 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>

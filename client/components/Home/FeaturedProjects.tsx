@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const projects = [
   {
@@ -31,6 +33,8 @@ const projects = [
 ];
 
 const FeaturedProjects = () => {
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
   return (
     <section className="bg-[#08121b] text-white py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
@@ -52,32 +56,41 @@ const FeaturedProjects = () => {
         </div>
 
         {/* Projects */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <Link
-              href={project.link}
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          ref={ref}
+        >
+          {projects.map((project, index) => (
+            <motion.div
               key={project.title}
-              className="group hover:opacity-90 transition"
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <div className="rounded-lg overflow-hidden shadow-md">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={1000}
-                  height={1000}
-                  className=" object-cover w-full h-[250px] "
-                />
-              </div>
-              <h3 className="text-lg font-semibold mt-4 mb-1">
-                {project.title}
-              </h3>
-              <p className="text-sm text-gray-300 mb-2">
-                {project.description}
-              </p>
-              <span className="text-xs font-semibold text-white/80">
-                {project.tag}
-              </span>
-            </Link>
+              <Link
+                href={project.link}
+                className="group hover:opacity-90 transition block"
+              >
+                <div className="rounded-lg overflow-hidden shadow-md">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={1000}
+                    height={1000}
+                    className="object-cover w-full h-[250px]"
+                  />
+                </div>
+                <h3 className="text-lg font-semibold mt-4 mb-1">
+                  {project.title}
+                </h3>
+                <p className="text-sm text-gray-300 mb-2">
+                  {project.description}
+                </p>
+                <span className="text-xs font-semibold text-white/80">
+                  {project.tag}
+                </span>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>
