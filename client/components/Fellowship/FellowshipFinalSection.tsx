@@ -15,7 +15,7 @@ const testimonials = [
 
 const FellowshipFinalSection = () => {
   return (
-    <section className="bg-[#08121b] text-white py-20 px-6 md:px-12">
+    <section className="bg-gradient-to-t from-[#327B9E]/40 to-[#08121b] h-[70vh] text-white py-20 px-6 md:px-12">
       <div className="max-w-5xl mx-auto text-center">
         {/* Past Fellows Testimonials */}
         <h2 className="text-xl md:text-2xl font-semibold mb-8">Past Fellows</h2>
@@ -43,8 +43,8 @@ const FellowshipFinalSection = () => {
             fellowship@oplyx.tech
           </a>
         </p>
-        <Link href="/contact">
-          <button className="px-6 py-2 bg-white text-black rounded hover:bg-gray-200 transition font-medium">
+        <Link href="/contact" className="">
+          <button className="px-6 py-2 bg-white text-black rounded hover:bg-gray-200 transition font-medium cursor-pointer">
             Let&apos;s Talk →
           </button>
         </Link>
