@@ -100,15 +100,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* Optional: Google Site Verification */}
-        <meta
-          name="google-site-verification"
-          content="Qe1U52axSgKNv24rObrEO3SnwtyVsOkDhTosfDMlq1c"
-        />
-      </head>
-
-      {/* ✅ Schema using next/script so it renders on server */}
+      {/* ✅ Don't need <Head> here if using metadata export */}
       <Script
         id="service-schema"
         type="application/ld+json"
@@ -138,7 +130,6 @@ export default function RootLayout({
           }),
         }}
       />
-
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${panchang.variable} tracking-wide antialiased scroll-smooth text-gray-900`}
       >
