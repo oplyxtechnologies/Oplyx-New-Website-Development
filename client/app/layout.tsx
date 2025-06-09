@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import Head from "next/head";
 
 // Load Panchang font
 const panchang = localFont({
@@ -100,39 +100,45 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
+        {/* Optional: Google Site Verification */}
         <meta
           name="google-site-verification"
           content="Qe1U52axSgKNv24rObrEO3SnwtyVsOkDhTosfDMlq1c"
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Service",
-              serviceType: "Web Development",
-              provider: {
-                "@type": "Organization",
-                name: "Oplyx Technologies",
-                url: "https://www.oplyx.tech",
-              },
-              areaServed: {
-                "@type": "Country",
-                name: "Nepal",
-              },
-              description:
-                "Custom web development solutions built with Next.js, optimized for performance, design, and scalability.",
-              offers: {
-                "@type": "Offer",
-                url: "https://www.oplyx.tech/services",
-                priceCurrency: "USD",
-                price: "1000", // optional
-              },
-            }),
-          }}
-        />
-      </Head>
+      </head>
+
+      {/* ✅ Schema using next/script so it renders on server */}
+      <Script
+        id="service-schema"
+        type="application/ld+json"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            serviceType: "Web Development",
+            provider: {
+              "@type": "Organization",
+              name: "Oplyx Technologies",
+              url: "https://www.oplyx.tech",
+            },
+            areaServed: {
+              "@type": "Country",
+              name: "Nepal",
+            },
+            description:
+              "Custom web development solutions built with Next.js, optimized for performance, design, and scalability.",
+            offers: {
+              "@type": "Offer",
+              url: "https://www.oplyx.tech/services",
+              priceCurrency: "USD",
+              price: "1000",
+            },
+          }),
+        }}
+      />
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${panchang.variable} tracking-wide antialiased scroll-smooth text-gray-900`}
       >
