@@ -29,8 +29,8 @@ const footerLinks = [
     heading: "Resources",
     links: [
       { name: "Blog", href: "/blog" },
-      { name: "Success Stories", href: "/success-stories" },
-      { name: "Playbook", href: "/playbook" },
+      // { name: "Success Stories", href: "/success-stories" },
+      // { name: "Playbook", href: "/playbook" },
     ],
   },
   {
@@ -38,17 +38,17 @@ const footerLinks = [
     links: [
       { name: "Career", href: "/careers" },
       { name: "Fellowship", href: "/fellowship" },
-      { name: "Life At Oplyx", href: "/life-at-oplyx" },
+      // { name: "Life At Oplyx", href: "/life-at-oplyx" },
     ],
   },
-  {
-    heading: "More",
-    links: [
-      { name: "Oplyx Brand", href: "/brand" },
-      { name: "Education Mission", href: "/education" },
-      { name: "Student Partnership", href: "/student-partnership" },
-    ],
-  },
+  // {
+  //   heading: "More",
+  //   links: [
+  //     { name: "Oplyx Brand", href: "/brand" },
+  //     { name: "Education Mission", href: "/education" },
+  //     { name: "Student Partnership", href: "/student-partnership" },
+  //   ],
+  // },
 ];
 
 const Footer = () => {

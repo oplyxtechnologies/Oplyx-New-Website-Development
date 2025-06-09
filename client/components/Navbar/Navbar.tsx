@@ -15,8 +15,8 @@ const navLinks = [
     label: "Resources",
     submenu: [
       { label: "Blog", href: "/blog" },
-      { label: "Success Stories", href: "/success-stories" },
-      { label: "Play Book", href: "/playbook" },
+      // { label: "Success Stories", href: "/success-stories" },
+      // { label: "Play Book", href: "/playbook" },
     ],
   },
   {
