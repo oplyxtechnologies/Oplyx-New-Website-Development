@@ -10,7 +10,7 @@ const footerLinks = [
     links: [
       { name: "About Us", href: "/about" },
       { name: "Contact Us", href: "/contact" },
-      { name: "Security and Compliance", href: "/security" },
+      { name: "Security and Compliance", href: "/security-compliance" },
     ],
   },
   {
@@ -94,7 +94,8 @@ const Footer = () => {
           <ul className="space-y-2">
             <li>
               <Link
-                href="#"
+                href="https://www.instagram.com/oplyxtechnologies/"
+                target="_blank"
                 className="flex items-center gap-2 text-white/70 hover:text-white transition"
               >
                 <Instagram size={16} /> Instagram
@@ -102,7 +103,8 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61572351668846"
+                target="_blank"
                 className="flex items-center gap-2 text-white/70 hover:text-white transition"
               >
                 <Facebook size={16} /> Facebook
@@ -110,7 +112,8 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="#"
+                href="https://www.linkedin.com/company/oplyxtech"
+                target="_blank"
                 className="flex items-center gap-2 text-white/70 hover:text-white transition"
               >
                 <Linkedin size={16} /> LinkedIn
@@ -118,7 +121,8 @@ const Footer = () => {
             </li>
             <li>
               <Link
-                href="#"
+                href="https://x.com/oplyxtech"
+                target="_blank"
                 className="flex items-center gap-2 text-white/70 hover:text-white transition"
               >
                 <Twitter size={16} /> X

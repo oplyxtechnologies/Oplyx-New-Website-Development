@@ -6,14 +6,14 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className=" h-[100vh] bg-gradient-to-br from-[#327B9E]/40 to-transparent text-white py-20 md:py-28 px-6 md:px-12">
-      <div className="max-w-7xl mt-10 mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+    <section className="min-h-screen bg-gradient-to-br from-[#327B9E]/40 to-transparent text-white px-6 md:px-12 flex items-center">
+      <div className="max-w-7xl mx-auto w-full flex flex-col items-center justify-between">
         {/* Text Content */}
-        <div className="space-y-6">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-panchang font-bold leading-tight">
+        <div className=" space-y-6 mt-26 text-center ">
+          <h1 className=" text-2xl md:text-4xl max-w-2xl mx-auto mt-26 font-panchang font-bold leading-tight">
             Future-Proof Digital Solutions, Tailored to You
           </h1>
-          <p className="text-base md:text-lg text-gray-300 max-w-lg leading-relaxed">
+          <p className=" max-w-2xl text-xs md:text-base  leading-relaxed mx-auto ">
             We help businesses grow with modern web development, design, and
             branding.
           </p>
@@ -25,13 +25,13 @@ const HeroSection = () => {
         </div>
 
         {/* Image Content */}
-        <div className="flex justify-center md:justify-end">
+        <div className="w-full  flex justify-center">
           <Image
-            src="/hero.svg"
+            src="/hero.png"
             alt="Digital globe illustration"
-            width={420}
-            height={420}
-            className="w-[280px] md:w-[380px] lg:w-[420px] h-auto"
+            width={1010}
+            height={1010}
+            className="w-full "
             priority
           />
         </div>
