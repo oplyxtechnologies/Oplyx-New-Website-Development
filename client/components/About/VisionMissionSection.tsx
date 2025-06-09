@@ -26,7 +26,7 @@ const MissionSection = () => {
           <Image
             loading="lazy"
             src="/mission-visual.svg" // Replace with your actual image path
-            alt="Mission Illustration"
+            alt="Oplyx-Mission Illustration"
             width={350}
             height={350}
             className="w-full max-w-sm h-auto"
@@ -40,7 +40,7 @@ const MissionSection = () => {
           <Image
             loading="lazy"
             src="/mission-visual.svg" // Replace with your actual image path
-            alt="Mission Illustration"
+            alt="Oplyx-Mission Illustration"
             width={350}
             height={350}
             className="w-full max-w-sm h-auto"

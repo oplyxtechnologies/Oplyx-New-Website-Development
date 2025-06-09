@@ -19,7 +19,7 @@ const CareersOpenings = () => {
         <Image
           loading="lazy"
           src="/bg.svg" // your background image here
-          alt="Background"
+          alt="Oplyx-Background"
           fill
           className="object-cover object-center"
           priority

@@ -9,7 +9,7 @@ const AboutHero = () => {
       <div className="inset-0 -z-40">
         <Image
           src="/about-bg.svg" // Make sure this path is correct in /public
-          alt="Background"
+          alt="Oplyx-Background"
           fill
           priority
           className="object-cover opacity-5 object-center"
@@ -18,7 +18,7 @@ const AboutHero = () => {
       <div className="inset-0 -z-10">
         <Image
           src="/bg.svg" // Make sure this path is correct in /public
-          alt="Background"
+          alt="Oplyx-Background"
           fill
           priority
           className="object-cover opacity-100 object-center"

@@ -22,7 +22,7 @@ export default function HealthcareCaseStudy() {
           <Image
             loading="lazy"
             src="/case-studies/vaccine-campaign.jpg" // ✅ Replace with actual path
-            alt="City of People Vaccine Campaign"
+            alt="Oplyx-City of People Vaccine Campaign"
             width={600}
             height={400}
             className="rounded-xl w-full h-auto object-cover"

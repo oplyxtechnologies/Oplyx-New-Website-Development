@@ -29,7 +29,7 @@ const HeroSectionHealthcare = () => {
         <div className="hidden w-full md:w-1/2 md:flex justify-center">
           <Image
             src="/healthcare/hero.png" // Replace with actual image path
-            alt="Oplyx Healthcare professionals using digital tools"
+            alt="Oplyx- Healthcare professionals using digital tools"
             width={520}
             height={520}
             className=" h-[500px] object-cover w-auto rounded-2xl aspect-2/3"

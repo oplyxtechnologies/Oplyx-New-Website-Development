@@ -36,7 +36,7 @@ export default function AwsPartnership() {
         >
           <Image
             src="/badges/aws-partner.svg" // Replace with your actual badge image
-            alt="AWS Partner"
+            alt="Oplyx-AWS Partner"
             width={120}
             height={120}
             className="object-contain"

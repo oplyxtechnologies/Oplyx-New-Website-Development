@@ -10,7 +10,7 @@ const CareersHero = () => {
       <div className=" inset-0 -z-10">
         <Image
           src="/bg.svg" // ✅ Make sure this is the actual background path
-          alt="Background"
+          alt="Oplyx-Background"
           fill
           priority
           className="object-cover object-center"
@@ -40,7 +40,7 @@ const CareersHero = () => {
         <div className="flex justify-center md:justify-end">
           <Image
             src="/careerhero.svg" // ✅ Replace with your visual asset
-            alt="Careers Illustration"
+            alt="Oplyx-Careers Illustration"
             width={400}
             height={400}
             className="w-full  h-auto"

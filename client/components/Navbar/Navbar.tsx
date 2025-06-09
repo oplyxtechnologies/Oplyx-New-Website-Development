@@ -87,7 +87,7 @@ const Navbar = () => {
             <Image
               priority
               src="/oplyxlogo2.svg"
-              alt="Oplyx Logo"
+              alt="Oplyx- Logo"
               width={100}
               height={100}
             />

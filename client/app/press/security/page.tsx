@@ -27,7 +27,7 @@ export default function BlogPost() {
         <Image
           loading="lazy"
           src="/blog/soc2-banner.png"
-          alt="SOC 2 Compliance"
+          alt="Oplyx-SOC 2 Compliance"
           width={800}
           height={420}
           className="w-full object-cover"
@@ -77,7 +77,7 @@ export default function BlogPost() {
           <Image
             loading="lazy"
             src="/blog/soc2-cert.png"
-            alt="SOC2 Cert"
+            alt="Oplyx-SOC2 Cert"
             width={200}
             height={200}
             className="mx-auto"

@@ -21,7 +21,7 @@ const HealthCareTestimonial = () => {
           <Image
             loading="lazy"
             src="/testimonials/nandana.jpeg" // 🔁 Replace with correct image path
-            alt="Nandana Rajendra"
+            alt="Oplyx-Nandana Rajendra"
             width={100}
             height={100}
             className="rounded-full border-2 border-white object-cover "

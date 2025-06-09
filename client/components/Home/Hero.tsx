@@ -28,7 +28,7 @@ const HeroSection = () => {
         <div className="w-full hidden md:flex justify-center">
           <Image
             src="/hero.png"
-            alt="Digital globe illustration"
+            alt="Oplyx-Digital globe illustration"
             width={1010}
             height={1010}
             className="w-full "

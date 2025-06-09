@@ -57,7 +57,7 @@ const CoreValuesSection = () => {
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <Image
           src="/bg.svg"
-          alt="Background"
+          alt="Oplyx-Background"
           fill
           priority
           className="object-cover object-center"

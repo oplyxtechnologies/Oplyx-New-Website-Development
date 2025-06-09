@@ -38,7 +38,7 @@ const SecurityHero = () => {
         >
           <Image
             src="/security-lock.png" // 🔁 Replace with your actual image path
-            alt="Security abstract illustration"
+            alt="Oplyx-Security abstract illustration"
             width={500}
             height={500}
             className="rounded-br-[90px] w-full  object-cover border-10 bg-gradient-to-br from-cyan-200 to-cyan-600 "

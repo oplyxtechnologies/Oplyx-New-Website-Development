@@ -21,7 +21,7 @@ const DevOpsCloudTestimonial = () => {
           <Image
             loading="lazy"
             src="/testimonials/tina.jpeg" // 🔁 Replace with correct image path
-            alt="Tina Gurung"
+            alt="Oplyx-Tina Gurung"
             width={100}
             height={100}
             className="rounded-full border-2 border-white object-cover "

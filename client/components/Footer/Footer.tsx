@@ -63,7 +63,7 @@ const Footer = () => {
               width={100}
               height={100}
               src="/oplyxlogo2.svg"
-              alt="Oplyx Logo"
+              alt="Oplyx- Logo"
               className="w-24"
             />
           </Link>

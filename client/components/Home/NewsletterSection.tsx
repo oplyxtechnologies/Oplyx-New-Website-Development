@@ -19,7 +19,7 @@ const NewsletterSection = () => {
         <Image
           loading="lazy"
           src="/bg.svg"
-          alt="Newsletter Background"
+          alt="Oplyx-Newsletter Background"
           fill
           className="object-cover  pointer-events-none"
         />
