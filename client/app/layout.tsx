@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import Head from "next/head";
 
 // Load Panchang font
 const panchang = localFont({
@@ -99,6 +100,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <meta
+          name="google-site-verification"
+          content="Qe1U52axSgKNv24rObrEO3SnwtyVsOkDhTosfDMlq1c"
+        />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${panchang.variable} tracking-wide antialiased scroll-smooth text-gray-900`}
       >
