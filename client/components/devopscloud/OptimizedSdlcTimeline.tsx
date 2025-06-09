@@ -82,7 +82,7 @@ export default function OptimizedSdlcTimelineVertical() {
               <div className="bg-white/5 border border-white/10 backdrop-blur-sm p-6 rounded-lg hover:bg-white/10 transition">
                 <div className="flex items-center gap-3 mb-2">
                   <div>{step.icon}</div>
-                  <h4 className="text-base font-semibold">{step.title}</h4>
+                  <h2 className="text-base font-semibold">{step.title}</h2>
                 </div>
               </div>
             </motion.div>

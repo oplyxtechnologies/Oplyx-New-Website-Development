@@ -16,10 +16,10 @@ export default function TeamAugmentationHero() {
         <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-2">
           Build your dream team
         </h1>
-        <h4 className="text-2xl md:text-3xl  leading-tight mb-6">
+        <h2 className="text-2xl md:text-3xl  leading-tight mb-6">
           Scaling a digital product or engineering team is tough Oplyx makes it
           effortless.
-        </h4>
+        </h2>
         <p className="text-lg md:text-xl text-white/80 mb-8">
           Whether you&apos;re launching a new product or enhancing an existing
           platform, Oplyx helps you augment your team with vetted,

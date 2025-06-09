@@ -120,7 +120,7 @@ export default function ContactForm() {
 
       <div className="grid max-w-7xl mx-auto md:grid-cols-3 gap-6 text-left text-sm text-white/80 mt-16">
         <div>
-          <h4 className="text-white font-semibold mb-1">Let&apos;s Talk</h4>
+          <h2 className="text-white font-semibold mb-1">Let&apos;s Talk</h2>
           <p>Call us for a quick chit chat</p>
           <p className="mt-1 font-medium text-white">(977) 9749442103</p>
           <p className="mt-1">
@@ -129,7 +129,7 @@ export default function ContactForm() {
           </p>
         </div>
         <div>
-          <h4 className="text-white font-semibold mb-1">Looking for a job?</h4>
+          <h2 className="text-white font-semibold mb-1">Looking for a job?</h2>
           <p>
             There is always an exciting position open that you can apply right
             away. Don&apos;t worry even if there&apos;s not something that suits
@@ -143,7 +143,7 @@ export default function ContactForm() {
           </Link>
         </div>
         <div>
-          <h4 className="text-white font-semibold mb-1">Get a fellowship</h4>
+          <h2 className="text-white font-semibold mb-1">Get a fellowship</h2>
           <p>
             Check out our fellowship page and ways to get in touch if
             you&apos;re looking to get a fellowship at Oplyx Technologies.

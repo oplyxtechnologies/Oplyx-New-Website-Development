@@ -73,7 +73,7 @@ const Footer = () => {
         {/* Footer Links */}
         {footerLinks.map((section) => (
           <div key={section.heading}>
-            <h4 className="font-semibold text-white mb-3">{section.heading}</h4>
+            <h2 className="font-semibold text-white mb-3">{section.heading}</h2>
             <ul className="space-y-2 text-white/70">
               {section.links.map((link) => (
                 <li key={link.name}>
@@ -91,7 +91,7 @@ const Footer = () => {
 
         {/* Connect With Us */}
         <div>
-          <h4 className="font-semibold text-white mb-3">Connect With Us</h4>
+          <h2 className="font-semibold text-white mb-3">Connect With Us</h2>
           <ul className="space-y-2">
             <li>
               <Link

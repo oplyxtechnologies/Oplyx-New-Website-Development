@@ -38,7 +38,7 @@ const FellowshipStatusSection = () => {
               className="border border-white/10 bg-white/5 rounded-md p-6 text-center hover:bg-white/10 transition"
             >
               <Clock className="mx-auto mb-3 text-white" size={20} />
-              <h4 className="text-sm font-semibold">{item.title}</h4>
+              <h2 className="text-sm font-semibold">{item.title}</h2>
               <p className="text-sm text-white/60 mt-1">{item.info}</p>
             </div>
           ))}

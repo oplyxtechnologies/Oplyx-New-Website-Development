@@ -81,7 +81,7 @@ const MentorshipBenefits = () => {
                 className="text-center  min-h-64 max-w-xs p-4 border border-white/10 bg-white/5 rounded-lg hover:bg-white/10 transition"
               >
                 <benefit.icon className="mx-auto mb-3 text-white" size={24} />
-                <h4 className="font-semibold mb-1">{benefit.title}</h4>
+                <h2 className="font-semibold mb-1">{benefit.title}</h2>
                 <p className="text-sm text-white/70">{benefit.description}</p>
               </div>
             ))}

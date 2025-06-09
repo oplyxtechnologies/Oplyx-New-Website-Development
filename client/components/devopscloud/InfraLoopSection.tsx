@@ -49,7 +49,7 @@ export default function InfraLoopSection() {
               className="bg-white/5 border border-white/10 p-6 rounded-lg backdrop-blur-sm w-64 text-center hover:bg-white/10 transition"
             >
               <div className="mb-4 flex justify-center">{item.icon}</div>
-              <h4 className="text-lg font-semibold">{item.title}</h4>
+              <h2 className="text-lg font-semibold">{item.title}</h2>
             </motion.div>
           ))}
         </motion.div>
