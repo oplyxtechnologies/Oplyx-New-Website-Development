@@ -13,9 +13,9 @@ export default function DevOpsCloudHero() {
           DevOps and Cloud
         </p>
 
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
           Security meets scalability
-        </h1>
+        </h2>
         <p className="text-lg md:text-xl text-white/80 mb-8">
           From CI/CD pipelines to AWS-powered infrastructure, Oplyx delivers
           DevOps solutions that are automated, secure, and optimized for scale.

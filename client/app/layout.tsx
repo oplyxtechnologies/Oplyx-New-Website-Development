@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
-import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import Head from "next/head";
 
 // Load Panchang font
 const panchang = localFont({
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Oplyx Technologies",
     description: "Tailored digital solutions for businesses that innovate.",
-    site: "@OplyxTech", // Replace if you have an official Twitter/X handle
+    site: "@OplyxTech",
     images: ["/og-image.jpg"],
   },
   icons: {
@@ -100,36 +100,37 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* ✅ Don't need <Head> here if using metadata export */}
-      <Script
-        id="service-schema"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Service",
-            serviceType: "Web Development",
-            provider: {
-              "@type": "Organization",
-              name: "Oplyx Technologies",
-              url: "https://www.oplyx.tech",
-            },
-            areaServed: {
-              "@type": "Country",
-              name: "Nepal",
-            },
-            description:
-              "Custom web development solutions built with Next.js, optimized for performance, design, and scalability.",
-            offers: {
-              "@type": "Offer",
-              url: "https://www.oplyx.tech/services",
-              priceCurrency: "USD",
-              price: "1000",
-            },
-          }),
-        }}
-      />
+      <Head>
+        {/* ✅ Structured Data for Web Development Service */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              serviceType: "Web Development",
+              provider: {
+                "@type": "Organization",
+                name: "Oplyx Technologies",
+                url: "https://www.oplyx.tech",
+              },
+              areaServed: {
+                "@type": "Country",
+                name: "Nepal",
+              },
+              description:
+                "Custom web development solutions built with Next.js, optimized for performance, design, and scalability.",
+              offers: {
+                "@type": "Offer",
+                url: "https://www.oplyx.tech/services",
+                priceCurrency: "USD",
+                price: "1000",
+              },
+            }),
+          }}
+        />
+      </Head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${panchang.variable} tracking-wide antialiased scroll-smooth text-gray-900`}
       >

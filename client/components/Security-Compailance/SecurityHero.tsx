@@ -14,10 +14,10 @@ const SecurityHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight font-panchang">
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight font-panchang">
             Your <span className="text-green-400">security</span> is our
             priority.
-          </h1>
+          </h2>
           <p className="text-white/80 mt-4 max-w-md">
             We follow rigorous security and compliance frameworks to protect
             your data, users, and infrastructure.

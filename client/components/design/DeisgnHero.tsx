@@ -13,9 +13,9 @@ export default function DesignHero() {
           Design
         </p>
 
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
           Design That Moves People and Products
-        </h1>
+        </h2>
         <p className="text-lg md:text-xl text-white/80 mb-8">
           From UI/UX to digital branding, Oplyx crafts beautiful, intuitive, and
           conversion-focused experiences that elevate your product and build

@@ -13,9 +13,9 @@ export default function AWSHero() {
           AWS
         </p>
 
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
           Enterprise-Ready Cloud Solutions. Delivered with Precision.
-        </h1>
+        </h2>
         <p className="text-lg md:text-xl text-white/80 mb-8">
           At Oplyx, we help businesses unlock the full power of AWS — from
           seamless cloud migrations to modern DevOps automation. Whether

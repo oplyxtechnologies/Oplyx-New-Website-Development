@@ -13,9 +13,9 @@ export default function AIDataHero() {
           AI and Data
         </p>
 
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
           Fuel smarter growth with AI-powered, data-driven solutions.
-        </h1>
+        </h2>
         <p className="text-lg md:text-xl text-white/80 mb-8">
           Transform your business with intelligent systems that turn raw data
           into actionable insights. At Oplyx, we blend data engineering, machine

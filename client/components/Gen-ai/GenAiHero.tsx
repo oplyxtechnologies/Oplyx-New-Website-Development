@@ -12,9 +12,9 @@ export default function GenAiHero() {
         <p className="mb-5 inline-block bg-white/30 text-white/70 rounded-full px-6 py-2 text-sm font-medium">
           GenAI Solutions
         </p>
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
           GenAI for Growth. Built for the Bold
-        </h1>
+        </h2>
         <p className="text-lg md:text-xl text-white/80 mb-8">
           Empower your business with custom generative AI solutions that
           automate workflows, enhance creativity, and deliver real business

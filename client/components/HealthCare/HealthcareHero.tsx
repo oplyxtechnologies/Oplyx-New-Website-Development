@@ -10,9 +10,9 @@ const HeroSectionHealthcare = () => {
       <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-between gap-12">
         {/* Text Content */}
         <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-panchang font-bold leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-panchang font-bold leading-tight">
             Building Healthier Digital Futures
-          </h1>
+          </h2>
           <p className="text-base md:text-lg text-white/80 max-w-xl leading-relaxed mx-auto md:mx-0">
             We help health innovators bring secure, accessible, and intelligent
             solutions to life — whether you&apos;re scaling a telehealth

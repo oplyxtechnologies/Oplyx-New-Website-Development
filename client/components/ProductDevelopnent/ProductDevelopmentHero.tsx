@@ -13,9 +13,9 @@ export default function ProductDevelopmentHero() {
           Product Development
         </p>
 
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
           Innovation Built to Launch. Reliability Delivered.
-        </h1>
+        </h2>
         <p className="text-lg md:text-xl text-white/80 mb-8">
           From startups to scale-ups, Oplyx helps you build modern, secure, and
           scalable digital products from concept to launch with unmatched

@@ -20,10 +20,10 @@ const FellowshipHero = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 tracking-wide items-center gap-12 relative z-10">
         {/* Left Content */}
         <div className="text-left">
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
             Start Your Tech Journey with <br />
             Oplyx Fellowship
-          </h1>
+          </h2>
           <p className="text-base md:text-md text-white/80 mb-6 max-w-md">
             An 8-week hands-on learning experience for aspiring developers,
             designers, and digital creators mentored by the Oplyx team.

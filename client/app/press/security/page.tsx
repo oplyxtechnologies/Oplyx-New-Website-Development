@@ -1,9 +1,23 @@
+// app/blog/soc-2-type-ii-compliance/page.tsx
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
+
+// ✅ Metadata API for SEO
 
 export default function BlogPost() {
+  useEffect(() => {
+    const jsonLd = document.createElement("script");
+    jsonLd.type = "application/ld+json";
+    jsonLd.text =
+      document
+        .querySelector("meta[name='structured-data']")
+        ?.getAttribute("content") || "";
+    document.head.appendChild(jsonLd);
+  }, []);
+
   return (
     <section className="text-white px-6 md:px-12 py-20 max-w-4xl mx-auto">
       {/* Blog Header */}
@@ -11,9 +25,9 @@ export default function BlogPost() {
         <p className="text-green-400 font-medium text-sm uppercase">
           Featured Story
         </p>
-        <h1 className="text-3xl md:text-5xl font-bold font-panchang leading-tight mt-2">
+        <h2 className="text-3xl md:text-5xl font-bold font-panchang leading-tight mt-2">
           Oplyx Achieves SOC 2 Type II Compliance
-        </h1>
+        </h2>
         <p className="mt-4 text-white/80 text-sm">
           Kathmandu, Nepal – Wednesday, February 14, 2025 – Oplyx Technologies
           announced today that it has successfully achieved SOC 2 Type II
@@ -25,12 +39,13 @@ export default function BlogPost() {
       {/* Banner */}
       <div className="rounded-xl overflow-hidden shadow-lg mb-12">
         <Image
-          loading="lazy"
           src="/blog/soc2-banner.png"
           alt="Oplyx-SOC 2 Compliance"
           width={800}
           height={420}
           className="w-full object-cover"
+          loading="eager"
+          priority
         />
       </div>
 
@@ -52,9 +67,9 @@ export default function BlogPost() {
         </p>
 
         <p>
-          “Security isn&apos;t just a box we check — it&apos;s embedded in how
-          we build,” said our CTO, Aayush Sharma. “This certification reinforces
-          our culture of compliance and engineering precision.”
+          Security isn&apos;t just a box we check — it&apos;s embedded in how we
+          build, said our CTO, Aayush Sharma. This certification reinforces our
+          culture of compliance and engineering precision.
         </p>
 
         <h2 className="text-xl md:text-2xl font-semibold pt-6">About SOC 2</h2>
@@ -75,7 +90,6 @@ export default function BlogPost() {
 
         <div className="pt-8">
           <Image
-            loading="lazy"
             src="/blog/soc2-cert.png"
             alt="Oplyx-SOC2 Cert"
             width={200}
