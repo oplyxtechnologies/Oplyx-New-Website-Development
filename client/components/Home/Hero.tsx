@@ -25,7 +25,7 @@ const HeroSection = () => {
         </div>
 
         {/* Image Content */}
-        <div className="w-full  flex justify-center">
+        <div className="w-full hidden md:flex justify-center">
           <Image
             src="/hero.png"
             alt="Digital globe illustration"
