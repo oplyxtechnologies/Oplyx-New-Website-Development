@@ -105,6 +105,33 @@ export default function RootLayout({
           name="google-site-verification"
           content="Qe1U52axSgKNv24rObrEO3SnwtyVsOkDhTosfDMlq1c"
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              serviceType: "Web Development",
+              provider: {
+                "@type": "Organization",
+                name: "Oplyx Technologies",
+                url: "https://www.oplyx.tech",
+              },
+              areaServed: {
+                "@type": "Country",
+                name: "Nepal",
+              },
+              description:
+                "Custom web development solutions built with Next.js, optimized for performance, design, and scalability.",
+              offers: {
+                "@type": "Offer",
+                url: "https://www.oplyx.tech/services",
+                priceCurrency: "USD",
+                price: "1000", // optional
+              },
+            }),
+          }}
+        />
       </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${panchang.variable} tracking-wide antialiased scroll-smooth text-gray-900`}
