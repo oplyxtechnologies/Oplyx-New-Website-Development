@@ -22,7 +22,7 @@ const MissionSection = () => {
         </div>
 
         {/* Image */}
-        <div className="flex justify-center md:justify-end">
+        <div className="hidden md:flex justify-center md:justify-end">
           <Image
             src="/mission-visual.svg" // Replace with your actual image path
             alt="Mission Illustration"
@@ -35,7 +35,7 @@ const MissionSection = () => {
       </div>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Image */}
-        <div className="flex justify-center md:justify-start">
+        <div className="hidden md:flex justify-center md:justify-start">
           <Image
             src="/mission-visual.svg" // Replace with your actual image path
             alt="Mission Illustration"
