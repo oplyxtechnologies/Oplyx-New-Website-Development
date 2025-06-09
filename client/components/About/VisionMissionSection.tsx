@@ -24,6 +24,7 @@ const MissionSection = () => {
         {/* Image */}
         <div className="hidden md:flex justify-center md:justify-end">
           <Image
+            loading="lazy"
             src="/mission-visual.svg" // Replace with your actual image path
             alt="Mission Illustration"
             width={350}
@@ -37,6 +38,7 @@ const MissionSection = () => {
         {/* Image */}
         <div className="hidden md:flex justify-center md:justify-start">
           <Image
+            loading="lazy"
             src="/mission-visual.svg" // Replace with your actual image path
             alt="Mission Illustration"
             width={350}

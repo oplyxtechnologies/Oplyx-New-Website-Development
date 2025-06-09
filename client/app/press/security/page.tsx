@@ -25,6 +25,7 @@ export default function BlogPost() {
       {/* Banner */}
       <div className="rounded-xl overflow-hidden shadow-lg mb-12">
         <Image
+          loading="lazy"
           src="/blog/soc2-banner.png"
           alt="SOC 2 Compliance"
           width={800}
@@ -74,6 +75,7 @@ export default function BlogPost() {
 
         <div className="pt-8">
           <Image
+            loading="lazy"
             src="/blog/soc2-cert.png"
             alt="SOC2 Cert"
             width={200}

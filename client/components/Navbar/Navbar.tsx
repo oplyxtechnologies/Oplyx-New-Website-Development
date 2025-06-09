@@ -85,6 +85,7 @@ const Navbar = () => {
         <Link href="/">
           <div className="flex items-center gap-2">
             <Image
+              priority
               src="/oplyxlogo2.svg"
               alt="Oplyx Logo"
               width={100}

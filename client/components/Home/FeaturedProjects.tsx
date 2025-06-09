@@ -73,6 +73,7 @@ const FeaturedProjects = () => {
               >
                 <div className="rounded-lg overflow-hidden shadow-md">
                   <Image
+                    loading="lazy"
                     src={project.image}
                     alt={project.title}
                     width={1000}

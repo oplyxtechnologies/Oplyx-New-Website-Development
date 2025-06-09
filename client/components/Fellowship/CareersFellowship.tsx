@@ -38,6 +38,7 @@ const FellowshipHero = () => {
         {/* Right Illustration */}
         <div className="flex justify-center md:justify-end">
           <Image
+            loading="lazy"
             src="/careerhero.svg" // ✅ Replace with your visual asset
             alt="Careers Illustration"
             width={400}

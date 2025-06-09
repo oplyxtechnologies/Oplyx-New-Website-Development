@@ -83,6 +83,7 @@ const TestimonialsSection = () => {
               <div className="border border-white/10 rounded-lg p-6 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition h-full flex flex-col justify-between">
                 <div className="flex justify-center mb-4">
                   <Image
+                    loading="lazy"
                     src={testimonial.image}
                     alt={testimonial.name}
                     width={60}

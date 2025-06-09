@@ -19,6 +19,7 @@ const HealthCareTestimonial = () => {
         {/* Image */}
         <div className="flex-shrink-0">
           <Image
+            loading="lazy"
             src="/testimonials/nandana.jpeg" // 🔁 Replace with correct image path
             alt="Nandana Rajendra"
             width={100}

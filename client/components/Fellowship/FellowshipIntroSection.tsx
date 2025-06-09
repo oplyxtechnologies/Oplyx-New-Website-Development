@@ -9,12 +9,12 @@ const FellowshipIntroSection = () => {
         {/* Image */}
         <div className="relative w-[372] h-full md:h-96 rounded-lg overflow-hidden">
           <Image
+            loading="lazy"
             src="/fellowship-cover.jpg" // Replace with actual image
             alt="Oplyx Fellowship"
             width={1000}
             height={1000}
             className="object-center absolute  rounded-lg"
-            priority
           />
         </div>
 

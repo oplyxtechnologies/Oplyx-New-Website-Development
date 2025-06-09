@@ -17,11 +17,11 @@ const NewsletterSection = () => {
       {/* Background Image */}
       <div className="inset-0 -z-10">
         <Image
+          loading="lazy"
           src="/bg.svg"
           alt="Newsletter Background"
           fill
           className="object-cover  pointer-events-none"
-          priority
         />
       </div>
 

@@ -59,6 +59,7 @@ const Footer = () => {
         <div>
           <Link href="/" className="flex items-center gap-2">
             <Image
+              loading="lazy"
               width={100}
               height={100}
               src="/oplyxlogo2.svg"

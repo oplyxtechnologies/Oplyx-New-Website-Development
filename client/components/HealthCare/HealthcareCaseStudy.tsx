@@ -20,6 +20,7 @@ export default function HealthcareCaseStudy() {
         {/* Image Section */}
         <div className="w-full lg:w-1/2">
           <Image
+            loading="lazy"
             src="/case-studies/vaccine-campaign.jpg" // ✅ Replace with actual path
             alt="City of People Vaccine Campaign"
             width={600}

@@ -64,6 +64,7 @@ export default function ProductTestimonials() {
               >
                 <div className="flex items-center gap-4 mb-4">
                   <Image
+                    loading="lazy"
                     src={t.image}
                     alt={t.name}
                     width={50}

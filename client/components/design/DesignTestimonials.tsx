@@ -90,6 +90,7 @@ export default function DesignFeedbackAndWork() {
                 >
                   <div className="flex items-center gap-4 mb-4">
                     <Image
+                      loading="lazy"
                       src={t.image}
                       alt={t.name}
                       width={50}
@@ -127,6 +128,7 @@ export default function DesignFeedbackAndWork() {
               >
                 <div className="rounded-lg overflow-hidden shadow-md border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition">
                   <Image
+                    loading="lazy"
                     src={project.image}
                     alt={project.title}
                     width={1000}

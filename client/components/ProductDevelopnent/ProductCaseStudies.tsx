@@ -52,6 +52,7 @@ export default function ProductCaseStudies() {
               className="group border border-white/10 rounded-lg overflow-hidden bg-white/5 backdrop-blur-sm hover:bg-white/10 transition"
             >
               <Image
+                loading="lazy"
                 src={project.image}
                 alt={project.title}
                 width={800}

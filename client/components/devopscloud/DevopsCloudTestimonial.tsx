@@ -19,6 +19,7 @@ const DevOpsCloudTestimonial = () => {
         {/* Image */}
         <div className="flex-shrink-0">
           <Image
+            loading="lazy"
             src="/testimonials/tina.jpeg" // 🔁 Replace with correct image path
             alt="Tina Gurung"
             width={100}
