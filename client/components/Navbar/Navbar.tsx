@@ -77,11 +77,11 @@ const Navbar = () => {
   return (
     <motion.header
       ref={navRef}
-      className="fixed top-0 left-0 right-0 z-50 bg-[#020208]/40 backdrop-blur-3xl text-white py-4 px-6 shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 bg-[#032433]/40 backdrop-blur-3xl text-white py-4 px-6 shadow-sm"
       animate={{ y: showNavbar ? 0 : -100 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <div className="max-w-7xl  mx-auto flex justify-between items-center">
         <Link href="/">
           <div className="flex items-center gap-2">
             <Image
@@ -121,13 +121,13 @@ const Navbar = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
-                    className="absolute top-full -mt-0.5 w-56 bg-white text-black shadow z-10"
+                    className="absolute top-full -mt-0.5 w-56 bg-[#091520]/60 backdrop-blur-3xl text-white shadow z-10 "
                   >
                     {link.submenu.map((sublink) => (
                       <Link
                         key={sublink.href}
                         href={sublink.href}
-                        className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100"
+                        className="flex items-center gap-2 px-4 py-2 hover:bg-[#091520]"
                       >
                         <ChevronRight size={14} />
                         {sublink.label}
@@ -140,7 +140,7 @@ const Navbar = () => {
           ))}
         </nav>
         <Link href="/contact">
-          <div className="ml-4 hidden md:flex items-center gap-1 font-panchang font-semibold hover:bg-white px-3 py-2 hover:text-black transition-colors">
+          <div className="ml-4 hidden md:flex items-center rounded-sm gap-1 font-panchang font-semibold hover:bg-white px-3 py-2 hover:text-black transition-colors">
             Build With Us <ArrowUpRight size={16} />
           </div>
         </Link>

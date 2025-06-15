@@ -6,19 +6,38 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import Head from "next/head";
 
-// Load Panchang font
-const panchang = localFont({
+const Sora = localFont({
   src: [
-    { path: "../public/font/Panchang-Bold.woff2" },
-    { path: "../public/font/Panchang-Extrabold.woff2" },
-    { path: "../public/font/Panchang-Extralight.woff2" },
-    { path: "../public/font/Panchang-Light.woff2" },
-    { path: "../public/font/Panchang-Medium.woff2" },
-    { path: "../public/font/Panchang-Regular.woff2" },
-    { path: "../public/font/Panchang-Semibold.woff2" },
-    { path: "../public/font/Panchang-Variable.woff2" },
+    { path: "../public/font/Sora-Thin.woff2", weight: "100", style: "normal" },
+    {
+      path: "../public/font/Sora-ExtraLight.woff2",
+      weight: "200",
+      style: "normal",
+    },
+    { path: "../public/font/Sora-Light.woff2", weight: "300", style: "normal" },
+    {
+      path: "../public/font/Sora-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/font/Sora-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/font/Sora-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    { path: "../public/font/Sora-Bold.woff2", weight: "700", style: "normal" },
+    {
+      path: "../public/font/Sora-ExtraBold.woff2",
+      weight: "800",
+      style: "normal",
+    },
   ],
-  variable: "--font-panchang",
+  variable: "--font-sora",
   display: "swap",
 });
 
@@ -132,7 +151,7 @@ export default function RootLayout({
       </Head>
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${panchang.variable} tracking-wide antialiased scroll-smooth text-gray-900`}
+        className={`${geistSans.variable} ${geistMono.variable} ${Sora.variable}font-semibold  antialiased scroll-smooth text-gray-900`}
       >
         <Navbar />
         {children}

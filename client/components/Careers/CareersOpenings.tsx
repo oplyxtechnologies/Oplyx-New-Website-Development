@@ -17,7 +17,6 @@ const CareersOpenings = () => {
       {/* Background Image */}
       <div className="inset-0 -z-10 pointer-events-none">
         <Image
-          loading="lazy"
           src="/bg.svg" // your background image here
           alt="Oplyx-Background"
           fill

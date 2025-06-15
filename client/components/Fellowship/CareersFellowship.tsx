@@ -44,7 +44,6 @@ const FellowshipHero = () => {
             width={400}
             height={400}
             className="w-full  h-auto"
-            priority
           />
         </div>
       </div>
