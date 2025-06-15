@@ -13,11 +13,7 @@ const navLinks = [
   },
   {
     label: "Resources",
-    submenu: [
-      { label: "Blog", href: "/blog" },
-      // { label: "Success Stories", href: "/success-stories" },
-      // { label: "Play Book", href: "/playbook" },
-    ],
+    submenu: [{ label: "Blog", href: "/blog" }],
   },
   {
     label: "Join Oplyx",
@@ -47,6 +43,7 @@ const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const lastScrollY = useRef(0);
 
+  // Close on click outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
@@ -55,11 +52,10 @@ const Navbar = () => {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Hide/show navbar on scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -74,6 +70,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 👉 Helper to close mobile nav when link clicked
+  const handleMobileLinkClick = () => {
+    setMobileOpen(false);
+    setOpenDropdown(null);
+  };
+
   return (
     <motion.header
       ref={navRef}
@@ -81,13 +83,13 @@ const Navbar = () => {
       animate={{ y: showNavbar ? 0 : -100 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      <div className="max-w-7xl  mx-auto flex justify-between items-center">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link href="/">
           <div className="flex items-center gap-2">
             <Image
               priority
               src="/oplyxlogo2.svg"
-              alt="Oplyx- Logo"
+              alt="Oplyx Logo"
               width={100}
               height={100}
             />
@@ -121,13 +123,13 @@ const Navbar = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
-                    className="absolute top-full -mt-0.5 w-56 bg-[#091520]/60 backdrop-blur-3xl text-white shadow z-10 "
+                    className="absolute top-full -mt-0.5 w-56 bg-[#091520] backdrop-blur-3xl text-white shadow z-10"
                   >
                     {link.submenu.map((sublink) => (
                       <Link
                         key={sublink.href}
                         href={sublink.href}
-                        className="flex items-center gap-2 px-4 py-2 hover:bg-[#091520]"
+                        className="flex items-center gap-2 px-4 py-4 hover:text-black hover:bg-[#81fbe9]"
                       >
                         <ChevronRight size={14} />
                         {sublink.label}
@@ -145,7 +147,7 @@ const Navbar = () => {
           </div>
         </Link>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Toggle */}
         <button
           className="md:hidden text-white"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -190,6 +192,7 @@ const Navbar = () => {
                             <Link
                               key={sublink.href}
                               href={sublink.href}
+                              onClick={handleMobileLinkClick}
                               className="flex items-center gap-2 hover:text-gray-300 ml-4"
                             >
                               <ChevronRight size={14} />
@@ -203,6 +206,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href={link.href || "#"}
+                    onClick={handleMobileLinkClick}
                     className="block hover:text-gray-300"
                   >
                     {link.label}
@@ -210,7 +214,7 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <Link href="/contact">
+            <Link href="/contact" onClick={handleMobileLinkClick}>
               <div className="flex items-center gap-1 font-semibold hover:bg-white p-2 hover:text-black transition-colors">
                 Build With Us <ArrowUpRight size={16} />
               </div>

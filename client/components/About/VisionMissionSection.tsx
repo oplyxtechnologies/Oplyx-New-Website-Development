@@ -5,7 +5,7 @@ import Image from "next/image";
 const MissionSection = () => {
   return (
     <section className="  text-white py-24 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl space-y-10 mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
         <div>
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">Mission</h2>
