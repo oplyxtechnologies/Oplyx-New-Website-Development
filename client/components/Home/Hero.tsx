@@ -5,7 +5,7 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <section className="relative bg-[url('/hero.png')] bg-cover bg-no-repeat min-h-screen flex items-center justify-center text-white px-6">
-      <div className="max-w-4xl text-center space-y-6 backdrop-blur-sm rounded-lg p-8">
+      <div className="max-w-4xl text-center space-y-6 backdrop-blur-2xl rounded-lg p-8">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
           Crafting Impactful <br /> Digital Experiences
         </h1>
