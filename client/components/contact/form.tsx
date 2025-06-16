@@ -3,7 +3,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-const services = [
+const service = [
   "Gen AI Solution",
   "Product Development",
   "AI & Data",
@@ -17,9 +17,9 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
+    phoneNumber: "",
     message: "",
-    services: [] as string[],
+    service: [] as string[],
   });
 
   const [submitting, setSubmitting] = useState(false);
@@ -27,22 +27,24 @@ export default function ContactForm() {
 
   const toggleService = (service: string) => {
     setFormData((prev) => {
-      const exists = prev.services.includes(service);
+      const exists = prev.service.includes(service);
       return {
         ...prev,
-        services: exists
-          ? prev.services.filter((s) => s !== service)
-          : [...prev.services, service],
+        service: exists
+          ? prev.service.filter((s) => s !== service)
+          : [...prev.service, service],
       };
     });
   };
+
+  console.log("Form Data:", formData);
 
   const handleSubmit = async () => {
     setSubmitting(true);
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/enquiry/submit`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -57,9 +59,9 @@ export default function ContactForm() {
         setFormData({
           name: "",
           email: "",
-          phone: "",
+          phoneNumber: "",
           message: "",
-          services: [],
+          service: [],
         });
       } else {
         toast.error(data.error || "Something went wrong.");
@@ -99,11 +101,11 @@ export default function ContactForm() {
             }
           />
           <input
-            value={formData.phone}
+            value={formData.phoneNumber}
             placeholder="Phone"
             className="bg-white/5 p-3 rounded text-white"
             onChange={(e) =>
-              setFormData({ ...formData, phone: e.target.value })
+              setFormData({ ...formData, phoneNumber: e.target.value })
             }
           />
         </div>
@@ -118,8 +120,8 @@ export default function ContactForm() {
         />
 
         <div className="flex flex-wrap gap-2 justify-center mb-6">
-          {services.map((service) => {
-            const active = formData.services.includes(service);
+          {service.map((service) => {
+            const active = formData.service.includes(service);
             return (
               <button
                 key={service}
