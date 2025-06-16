@@ -13,7 +13,10 @@ const navLinks = [
   },
   {
     label: "Resources",
-    submenu: [{ label: "Blog", href: "/blog" }],
+    submenu: [
+      { label: "Blog", href: "/blog" },
+      { label: "Success Stories", href: "/success-stories" },
+    ],
   },
   {
     label: "Join Oplyx",

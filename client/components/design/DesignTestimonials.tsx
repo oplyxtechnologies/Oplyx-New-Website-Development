@@ -30,24 +30,24 @@ const projects = [
     description:
       "Modern eBike platform with UI/UX design and battery estimator tool.",
     tag: "UI/UX, Branding",
-    image: "/projects/voltride.png",
-    link: "/projects/voltride",
+    image: "/success-stories/voltride.png",
+    link: "/success-stories/voltride",
   },
   {
     title: "LushGlow",
     description:
       "Soft, elegant design for a skincare brand with responsive flow.",
     tag: "Branding, Web Design",
-    image: "/projects/lushglow.png",
-    link: "/projects/lushglow",
+    image: "/success-stories/lushglow.png",
+    link: "/success-stories/lushglow",
   },
   {
     title: "Chasing Horizon",
     description:
       "Travel booking UI with full brand identity, icons and layouts.",
     tag: "Product Design",
-    image: "/projects/chasinghorizon.png",
-    link: "/projects/chasing-horizon",
+    image: "/success-stories/chasinghorizon.png",
+    link: "/success-stories/chasing-horizon",
   },
 ];
 

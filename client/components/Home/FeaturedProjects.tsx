@@ -11,24 +11,24 @@ const projects = [
     description:
       "Built a product-focused website with custom battery estimator and comparison tools.",
     tag: "E-commerce Development",
-    image: "/projects/voltride.png",
-    link: "/projects/voltride",
+    image: "/success-stories/voltride.png",
+    link: "/success-stories/voltride",
   },
   {
     title: "LushGlow Ecommerce Website",
     description:
       "A soft, elegant e-commerce design for Lush Glow with smooth flow and mobile-first experience.",
     tag: "E-commerce Development",
-    image: "/projects/lushglow.png",
-    link: "/projects/lushglow",
+    image: "/success-stories/lushglow.png",
+    link: "/success-stories/lushglow",
   },
   {
     title: "Chasing Horizon Website",
     description:
       "A Flight Booking, Hotels and Vehicles Renting System integrated with payment method with mobile responsive.",
     tag: "Flight Booking",
-    image: "/projects/chasinghorizon.png",
-    link: "/projects/chasing-horizon",
+    image: "/success-stories/chasinghorizon.png",
+    link: "/success-stories/chasing-horizon",
   },
 ];
 

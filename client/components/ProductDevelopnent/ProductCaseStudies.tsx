@@ -9,24 +9,24 @@ const caseStudies = [
     description:
       "Built a product-focused site with custom battery estimator and product comparison features.",
     tag: "E-Commerce",
-    image: "/projects/voltride.png",
-    link: "/projects/voltride",
+    image: "/success-stories/voltride.png",
+    link: "/success-stories/voltride",
   },
   {
     title: "LushGlow Ecommerce Website",
     description:
       "Soft, elegant e-commerce experience with a mobile-first design and seamless checkout flow.",
     tag: "Beauty & Wellness",
-    image: "/projects/lushglow.png",
-    link: "/projects/lushglow",
+    image: "/success-stories/lushglow.png",
+    link: "/success-stories/lushglow",
   },
   {
     title: "Chasing Horizon Booking System",
     description:
       "Flight booking, hotel & vehicle rental system with integrated payments and responsive UI.",
     tag: "Travel Platform",
-    image: "/projects/chasinghorizon.png",
-    link: "/projects/chasing-horizon",
+    image: "/success-stories/chasinghorizon.png",
+    link: "/success-stories/chasing-horizon",
   },
 ];
 
