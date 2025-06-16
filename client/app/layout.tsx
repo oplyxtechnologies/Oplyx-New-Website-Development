@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
 
 const Sora = localFont({
   src: [
@@ -155,6 +157,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Toaster position="top-center" />
         <Footer />
       </body>
     </html>

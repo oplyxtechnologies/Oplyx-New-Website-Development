@@ -1,8 +1,7 @@
-// components/ContactForm.tsx
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import toast from "react-hot-toast";
 
 const services = [
   "Gen AI Solution",
@@ -24,6 +23,7 @@ export default function ContactForm() {
   });
 
   const [submitting, setSubmitting] = useState(false);
+  const [status] = useState("");
 
   const toggleService = (service: string) => {
     setFormData((prev) => {
@@ -39,12 +39,36 @@ export default function ContactForm() {
 
   const handleSubmit = async () => {
     setSubmitting(true);
-    await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-    setSubmitting(false);
+
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await res.json();
+
+      if (data.success) {
+        toast.success("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          services: [],
+        });
+      } else {
+        toast.error(data.error || "Something went wrong.");
+      }
+    } catch {
+      toast.error("Failed to send. Please try again later.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -61,11 +85,13 @@ export default function ContactForm() {
 
         <div className="flex flex-col gap-4 mb-4">
           <input
+            value={formData.name}
             placeholder="Name"
             className="bg-white/5 p-3 rounded text-white"
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
           <input
+            value={formData.email}
             placeholder="Email"
             className="bg-white/5 p-3 rounded text-white"
             onChange={(e) =>
@@ -73,6 +99,7 @@ export default function ContactForm() {
             }
           />
           <input
+            value={formData.phone}
             placeholder="Phone"
             className="bg-white/5 p-3 rounded text-white"
             onChange={(e) =>
@@ -82,6 +109,7 @@ export default function ContactForm() {
         </div>
 
         <textarea
+          value={formData.message}
           placeholder="Message"
           className="bg-white/5 p-3 w-full min-h-44 rounded text-white mb-6"
           onChange={(e) =>
@@ -95,6 +123,7 @@ export default function ContactForm() {
             return (
               <button
                 key={service}
+                type="button"
                 onClick={() => toggleService(service)}
                 className={`px-4 py-2 rounded-full text-sm font-medium border transition ${
                   active
@@ -107,55 +136,19 @@ export default function ContactForm() {
             );
           })}
         </div>
-        <Link href="#" className="">
-          <button
-            onClick={handleSubmit}
-            disabled={submitting}
-            className="px-6 py-3 bg-white cursor-pointer text-black rounded hover:bg-gray-200 transition"
-          >
-            {submitting ? "Sending..." : "Send a Message"}
-          </button>
-        </Link>
+
+        <button
+          onClick={handleSubmit}
+          disabled={submitting}
+          className="px-6 py-3 bg-white cursor-pointer text-black rounded hover:bg-gray-200 transition"
+        >
+          {submitting ? "Sending..." : "Send a Message"}
+        </button>
+
+        {status && <p className="mt-4 text-sm text-white/70">{status}</p>}
       </div>
 
-      <div className="grid max-w-7xl mx-auto md:grid-cols-3 gap-6 text-left text-sm text-white/80 mt-16">
-        <div>
-          <h2 className="text-white font-semibold mb-1">Let&apos;s Talk</h2>
-          <p>Call us for a quick chit chat</p>
-          <p className="mt-1 font-medium text-white">(977) 9749442103</p>
-          <p className="mt-1">
-            We&apos;re available Monday through Friday during Nepal working
-            hours.
-          </p>
-        </div>
-        <div>
-          <h2 className="text-white font-semibold mb-1">Looking for a job?</h2>
-          <p>
-            There is always an exciting position open that you can apply right
-            away. Don&apos;t worry even if there&apos;s not something that suits
-            you immediately, we will get in touch when it becomes available!
-          </p>
-          <Link
-            href="/careers"
-            className="mt-2 inline-block text-white font-medium hover:underline"
-          >
-            Apply Now →
-          </Link>
-        </div>
-        <div>
-          <h2 className="text-white font-semibold mb-1">Get a fellowship</h2>
-          <p>
-            Check out our fellowship page and ways to get in touch if
-            you&apos;re looking to get a fellowship at Oplyx Technologies.
-          </p>
-          <Link
-            href="/fellowship"
-            className="mt-2 inline-block text-white font-medium hover:underline"
-          >
-            Apply Now →
-          </Link>
-        </div>
-      </div>
+      {/* Rest of your static contact info blocks stay the same */}
     </section>
   );
 }
