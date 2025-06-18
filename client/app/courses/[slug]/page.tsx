@@ -2,7 +2,7 @@ import { Book, Gauge, Globe, Star, Timer, UserPen } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import courses from "@/components/data/course.json";
-import CurriculumToggle from "@/components/course/CurriculumToggle"; // ✅ separate Client Component
+import CurriculumToggle from "@/components/course/CurriculumToggle";
 import Image from "next/image";
 
 export default async function CoursePage({
@@ -10,9 +10,9 @@ export default async function CoursePage({
 }: {
   params: { slug: string };
 }) {
+  // ✅ Use inline typing for params
   const { slug } = params;
 
-  // ✅ When using async function, this ensures type matches
   const course = courses.find((c) => c.slug === slug);
 
   if (!course) return notFound();
@@ -20,7 +20,7 @@ export default async function CoursePage({
   return (
     <main className="bg-[#0a0d12] mt-10 min-h-screen px-6 md:px-12 py-16 text-white">
       <div className="max-w-6xl mx-auto grid md:grid-cols-[2fr_1fr] gap-12">
-        {/* LEFT */}
+        {/* ✅ LEFT CONTENT */}
         <div>
           <h1 className="text-3xl md:text-4xl font-bold mb-2">
             {course.title}
@@ -52,9 +52,10 @@ export default async function CoursePage({
             {course.longDescription}
           </div>
 
-          {/* ✅ USE CLIENT CHILD */}
+          {/* ✅ Curriculum Toggle */}
           <CurriculumToggle curriculum={course.curriculum} />
 
+          {/* ✅ FAQs */}
           <div>
             <h2 className="text-2xl font-bold mb-6">FAQs</h2>
             <div className="space-y-4">
@@ -85,7 +86,7 @@ export default async function CoursePage({
           </div>
         </div>
 
-        {/* SIDEBAR */}
+        {/* ✅ FIXED SIDEBAR */}
         <div className="relative">
           <div className="md:sticky md:top-24 border border-white/20 p-6 rounded-lg shadow-sm bg-white/5 backdrop-blur-sm">
             <h3 className="text-2xl font-bold mb-4">Rs. {course.price}</h3>
@@ -96,32 +97,32 @@ export default async function CoursePage({
             </Link>
             <h4 className="font-semibold mb-4">This course includes:</h4>
             <ul className="text-sm text-white/90 space-y-3 mb-6">
-              <li className="flex items-center justify-between ">
-                <div className="flex gap-2 ">
+              <li className="flex items-center justify-between">
+                <div className="flex gap-2">
                   <Book size={20} /> Lectures
                 </div>{" "}
                 {course.lectures}
               </li>
-              <li className="flex items-center justify-between ">
-                <div className="flex gap-2 ">
+              <li className="flex items-center justify-between">
+                <div className="flex gap-2">
                   <Timer size={20} /> Duration
                 </div>{" "}
                 {course.duration}
               </li>
-              <li className="flex items-center justify-between ">
-                <div className="flex gap-2 ">
+              <li className="flex items-center justify-between">
+                <div className="flex gap-2">
                   <Gauge size={20} /> Level:
                 </div>{" "}
                 {course.level}
               </li>
-              <li className="flex items-center justify-between ">
-                <div className="flex gap-2 ">
+              <li className="flex items-center justify-between">
+                <div className="flex gap-2">
                   <UserPen size={20} /> Instructor:
-                </div>
+                </div>{" "}
                 {course.instructor.name}
               </li>
-              <li className="flex items-center justify-between ">
-                <div className="flex gap-2 ">
+              <li className="flex items-center justify-between">
+                <div className="flex gap-2">
                   <Globe size={20} /> Language:
                 </div>{" "}
                 English, Nepali
