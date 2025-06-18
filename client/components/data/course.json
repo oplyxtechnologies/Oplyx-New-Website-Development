@@ -1,0 +1,242 @@
+[
+  {
+    "slug": "mern-stack",
+    "title": "MERN Stack Development",
+    "price": 17999,
+    "description": "Master MongoDB, Express, React, and Node.js to build full-stack web apps with real projects.",
+    "longDescription": "Dive deep into the world of full-stack development with the powerful MERN stack. This course equips you with practical skills through real-world projects, covering best practices, architecture patterns, and deployment workflows. Perfect for intermediate learners looking to build production-grade applications.",
+    "image": "/courses/mern.jpg",
+    "level": "Intermediate",
+    "duration": "110h 00m",
+    "lectures": 60,
+    "instructor": {
+      "name": "Rajan Sharma",
+      "role": "Senior Developer",
+      "rating": 4.9
+    },
+    "curriculum": [
+      {
+        "title": "Module 1: Web & Programming Fundamentals",
+        "lectures": [
+          "Internet, browsers, servers — how the web works",
+          "HTTP & HTTPS basics",
+          "Basic command line usage",
+          "Intro to version control with Git & GitHub"
+        ]
+      },
+      {
+        "title": "Module 2: HTML & CSS Basics (Refresher)",
+        "lectures": [
+          "HTML5 semantic elements",
+          "CSS fundamentals, Flexbox, Grid",
+          "Responsive design basics"
+        ]
+      },
+      {
+        "title": "Module 3: JavaScript Essentials",
+        "lectures": [
+          "JS syntax, variables, data types",
+          "Functions, conditionals, loops",
+          "DOM manipulation",
+          "Fetch API basics",
+          "ES6+ features (arrow functions, spread/rest, destructuring)"
+        ]
+      },
+      {
+        "title": "Module 4: Frontend Framework — React.js",
+        "lectures": [
+          "Why React? Setup with Vite/CRA",
+          "JSX & Components",
+          "Event handling",
+          "Conditional rendering & lists",
+          "React Hooks (useState, useEffect)",
+          "React Router",
+          "Context API basics",
+          "Building reusable components",
+          "Connecting React with REST APIs"
+        ]
+      },
+      {
+        "title": "Module 5: Backend Development — Node.js & Express.js",
+        "lectures": [
+          "Node.js fundamentals (npm, modules, fs, env)",
+          "Building a simple HTTP server",
+          "Setting up Express.js",
+          "RESTful API routes & controllers",
+          "Middleware & error handling",
+          "Connecting backend to MongoDB",
+          "Using Postman to test endpoints",
+          "Authentication with JWT & bcrypt",
+          "Environment variables & config files"
+        ]
+      },
+      {
+        "title": "Module 6: Database — MongoDB & Mongoose",
+        "lectures": [
+          "NoSQL vs SQL basics",
+          "MongoDB CRUD operations",
+          "Mongoose schemas & models",
+          "Data validation",
+          "Querying & population",
+          "MongoDB Atlas & connection strings"
+        ]
+      },
+      {
+        "title": "Module 7: Integrating MERN",
+        "lectures": [
+          "Full-stack app architecture",
+          "Connecting React frontend with Express backend",
+          "Handling CORS & proxy",
+          "Secure API calls with tokens",
+          "Environment variables for frontend"
+        ]
+      },
+      {
+        "title": "Module 8: Deployment & DevOps Basics",
+        "lectures": [
+          "Preparing production build",
+          "Deploying frontend on Vercel/Netlify",
+          "Deploying backend on Render/Heroku",
+          "Using MongoDB Atlas for live DB",
+          "Basic CI/CD intro"
+        ]
+      },
+      {
+        "title": "Module 9: Capstone Project & Portfolio",
+        "lectures": [
+          "Build a complete MERN CRUD app with auth (e.g., Task Manager or Blog)",
+          "Connect to GitHub",
+          "Demo & presentation",
+          "Best practices: code structure, linting, readme"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is the MERN Stack and why should I learn it?",
+        "a": "The MERN Stack is a popular set of JavaScript technologies — MongoDB, Express.js, React.js, and Node.js — used to build modern, full-stack web applications. It’s in high demand because you can develop both frontend and backend using just one language: JavaScript!"
+      },
+      {
+        "q": "Do I need any coding experience to join this course?",
+        "a": "Basic computer and internet knowledge is enough. We start from the fundamentals and cover everything step-by-step. Prior knowledge of HTML, CSS, or JavaScript is helpful but not mandatory."
+      },
+      {
+        "q": "Will I get a certificate and project portfolio after completion?",
+        "a": "Yes! You’ll receive an official Oplyx Diploma Certificate and have a GitHub portfolio with real projects that you can showcase to employers or clients."
+      },
+      {
+        "q": "Is there any placement or internship support?",
+        "a": "Absolutely! Top-performing students will get internship opportunities at Oplyx or partner companies. We also guide you on building your CV, LinkedIn profile, and preparing for developer interviews."
+      }
+    ]
+  },
+  {
+    "slug": "graphics-design",
+    "title": "Graphics Design Diploma Mastery Course",
+    "price": 14999,
+    "description": "Learn modern graphic design: typography, color theory, layout & branding using real tools.",
+    "longDescription": "Unlock your creativity and master visual communication with our comprehensive graphics design course. Covering design principles, branding, and hands-on tools like Adobe Illustrator and Photoshop, this program prepares you to craft stunning visuals for real brands.",
+    "image": "/courses/graphicsdesign.jpg",
+    "level": "Beginner",
+    "duration": "100h 00m",
+    "lectures": 50,
+    "instructor": {
+      "name": "Aastha Sharma",
+      "role": "Senior Designer",
+      "rating": 4.8
+    },
+    "curriculum": [
+      {
+        "title": "Module 1: Introduction to Graphic Design",
+        "lectures": [
+          "History & Evolution of Graphic Design",
+          "Types of Design: Print, Digital, Branding",
+          "Design Principles: Balance, Contrast, Hierarchy, Alignment, Proximity",
+          "Understanding Colour Theory & Psychology",
+          "Typography Basics",
+          "Layouts & Grids",
+          "File Types & Resolution for Print & Web"
+        ]
+      },
+      {
+        "title": "Module 2: Adobe Photoshop",
+        "lectures": [
+          "Interface & Workspace Customization",
+          "Working with Layers, Masks & Adjustment Layers",
+          "Selections & Retouching Tools",
+          "Colour Correction & Image Enhancement",
+          "Compositing & Manipulation Techniques",
+          "Filters & Effects",
+          "Creating Social Media Posts & Banners",
+          "Mockups & Presentations",
+          "Exporting for Web & Print"
+        ]
+      },
+      {
+        "title": "Module 3: Adobe Illustrator",
+        "lectures": [
+          "Interface & Tools Overview",
+          "Drawing Shapes & Using the Pen Tool",
+          "Working with Paths, Anchor Points & Curves",
+          "Creating & Modifying Text",
+          "Colours, Gradients & Swatches",
+          "Using Symbols & Patterns",
+          "Creating Logos & Brand Elements",
+          "Designing Business Cards & Stationery",
+          "Exporting Vector Files"
+        ]
+      },
+      {
+        "title": "Module 4: Adobe InDesign",
+        "lectures": [
+          "Understanding Layouts & Master Pages",
+          "Working with Grids & Guides",
+          "Placing & Formatting Text & Images",
+          "Styles: Paragraph, Character & Object",
+          "Designing Multi-Page Brochures",
+          "Creating Flyers & Magazines",
+          "Exporting Print-Ready PDFs"
+        ]
+      },
+      {
+        "title": "Module 5: Figma",
+        "lectures": [
+          "Introduction to Figma Interface",
+          "Frames, Artboards & Layers",
+          "Designing Wireframes & UI Components",
+          "Working with Design Systems",
+          "Creating Prototypes & Interactions",
+          "Sharing & Collaborating in Figma",
+          "Best Practices for Responsive Design"
+        ]
+      },
+      {
+        "title": "Module 6: Design Projects & Portfolio Development",
+        "lectures": [
+          "Choose a brand or product to design full collateral: logo, social media graphics, print flyer, brochure, landing page.",
+          "Review & get feedback from mentor.",
+          "Prepare a final digital portfolio showcasing all work.",
+          "Mock client presentation."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Who can join this Graphic Design Course?",
+        "a": "Anyone! This course is perfect for beginners, students, freelancers, or anyone looking to learn professional graphic design skills from scratch — no prior experience needed."
+      },
+      {
+        "q": "What tools will I learn in this course?",
+        "a": "You will master Adobe Photoshop, Illustrator, InDesign, and Figma — these are industry-standard tools used by professional designers worldwide for editing photos, creating vector graphics, layouts, and UI designs."
+      },
+      {
+        "q": "How are the classes conducted and what if I miss one?",
+        "a": "Classes are hybrid (online + in-person) and fixed at 2 hours per session. Don’t worry if you miss a class — recordings are provided, so you can revise anytime."
+      },
+      {
+        "q": "Is there a certificate and any job opportunity after completing the course?",
+        "a": "Yes! After completing the course and final project, you will receive an Oplyx Certificate of Completion. Plus, top students get a chance for an internship opportunity to gain real-world experience."
+      }
+    ]
+  }
+]

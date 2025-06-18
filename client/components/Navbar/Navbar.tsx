@@ -12,6 +12,10 @@ const navLinks = [
     href: "/about",
   },
   {
+    label: "Courses",
+    href: "/courses",
+  },
+  {
     label: "Resources",
     submenu: [
       { label: "Blog", href: "/blog" },

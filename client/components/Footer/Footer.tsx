@@ -29,7 +29,7 @@ const footerLinks = [
     heading: "Resources",
     links: [
       { name: "Blog", href: "/blog" },
-      // { name: "Success Stories", href: "/success-stories" },
+      { name: "Success Stories", href: "/success-stories" },
       // { name: "Playbook", href: "/playbook" },
     ],
   },
