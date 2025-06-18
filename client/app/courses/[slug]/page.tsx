@@ -2,11 +2,17 @@ import { Book, Gauge, Globe, Star, Timer, UserPen } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import courses from "@/components/data/course.json";
-import CurriculumToggle from "@/components/course/CurriculumToggle"; // ✅ NEW separate file
+import CurriculumToggle from "@/components/course/CurriculumToggle"; // ✅ separate Client Component
 import Image from "next/image";
 
-export default function CoursePage({ params }: { params: { slug: string } }) {
+export default async function CoursePage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const { slug } = params;
+
+  // ✅ When using async function, this ensures type matches
   const course = courses.find((c) => c.slug === slug);
 
   if (!course) return notFound();
@@ -40,7 +46,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
             height={800}
             className="w-full h-96 rounded mb-4 object-cover"
             priority
-          ></Image>
+          />
 
           <div className="mb-10 text-white/80 leading-relaxed">
             {course.longDescription}
