@@ -1,6 +1,11 @@
-// ✅ [slug]/page.tsx
-
-import { Book, Gauge, Globe, Star, Timer, UserPen } from "lucide-react";
+import {
+  Book,
+  Gauge,
+  Globe,
+  Star,
+  Timer,
+  PenIcon as UserPen,
+} from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import CurriculumToggle from "@/components/course/CurriculumToggle";
@@ -8,8 +13,15 @@ import Image from "next/image";
 
 import courses from "@/components/data/course.json"; // your static JSON
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const course = courses.find((c) => c.slug === params.slug);
+// Updated type definition for Next.js 15
+type PageProps = {
+  params: Promise<{ slug: string }>;
+};
+
+export default async function Page({ params }: PageProps) {
+  // Await the params Promise
+  const { slug } = await params;
+  const course = courses.find((c) => c.slug === slug);
   if (!course) return notFound();
 
   return (
@@ -24,7 +36,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
           <div className="flex items-center flex-wrap gap-4 text-sm text-[#65ddbc] mb-6">
             <span className="flex items-center gap-2">
-              <Star /> {course.instructor.rating}/5.0
+              <Star /> {course.instructor?.rating || "N/A"}/5.0
             </span>
             <span className="flex items-center gap-2">
               <Book /> {course.level}
@@ -35,7 +47,7 @@ export default function Page({ params }: { params: { slug: string } }) {
           </div>
 
           <Image
-            src={course.image}
+            src={course.image || "/placeholder.svg?height=400&width=800"}
             alt={course.title}
             width={1200}
             height={800}
@@ -44,39 +56,45 @@ export default function Page({ params }: { params: { slug: string } }) {
           />
 
           <div className="mb-10 text-white/80 leading-relaxed">
-            {course.longDescription}
+            {course.longDescription || course.description}
           </div>
 
           {/* ✅ Curriculum Toggle */}
-          <CurriculumToggle curriculum={course.curriculum} />
+          <CurriculumToggle curriculum={course.curriculum || []} />
 
           {/* ✅ FAQs */}
           <div>
             <h2 className="text-2xl font-bold mb-6">FAQs</h2>
             <div className="space-y-4">
-              {course.faqs.map((faq, idx) => (
-                <details
-                  key={idx}
-                  className="group border border-white/10 rounded-lg p-4 bg-white/5 backdrop-blur-sm transition-all"
-                >
-                  <summary className="flex items-center justify-between cursor-pointer font-medium">
-                    <span>{faq.q}</span>
-                    <svg
-                      className="ml-2 h-4 w-4 flex-shrink-0 transform transition-transform duration-300 group-open:rotate-45"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                    >
-                      <line x1="12" y1="5" x2="12" y2="19" />
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                    </svg>
-                  </summary>
-                  <div className="overflow-hidden transition-all duration-300 mt-2 text-white/80">
-                    <p>{faq.a}</p>
-                  </div>
-                </details>
-              ))}
+              {course.faqs && course.faqs.length > 0 ? (
+                course.faqs.map((faq, idx) => (
+                  <details
+                    key={idx}
+                    className="group border border-white/10 rounded-lg p-4 bg-white/5 backdrop-blur-sm transition-all"
+                  >
+                    <summary className="flex items-center justify-between cursor-pointer font-medium">
+                      <span>{faq.q}</span>
+                      <svg
+                        className="ml-2 h-4 w-4 flex-shrink-0 transform transition-transform duration-300 group-open:rotate-45"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                      >
+                        <line x1="12" y1="5" x2="12" y2="19" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                      </svg>
+                    </summary>
+                    <div className="overflow-hidden transition-all duration-300 mt-2 text-white/80">
+                      <p>{faq.a}</p>
+                    </div>
+                  </details>
+                ))
+              ) : (
+                <p className="text-white/60">
+                  No FAQs available at the moment.
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -96,7 +114,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                 <div className="flex gap-2">
                   <Book size={20} /> Lectures
                 </div>
-                {course.lectures}
+                {course.lectures || "TBD"}
               </li>
               <li className="flex items-center justify-between">
                 <div className="flex gap-2">
@@ -114,7 +132,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                 <div className="flex gap-2">
                   <UserPen size={20} /> Instructor:
                 </div>
-                {course.instructor.name}
+                {course.instructor?.name || "TBD"}
               </li>
               <li className="flex items-center justify-between">
                 <div className="flex gap-2">
