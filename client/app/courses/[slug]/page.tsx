@@ -8,9 +8,6 @@ import Image from "next/image";
 
 import courses from "@/components/data/course.json"; // your static JSON
 
-/**
- * ✅ Correct props: params is NOT a Promise.
- */
 export default function Page({ params }: { params: { slug: string } }) {
   const course = courses.find((c) => c.slug === params.slug);
   if (!course) return notFound();
@@ -133,10 +130,6 @@ export default function Page({ params }: { params: { slug: string } }) {
   );
 }
 
-/**
- * ✅ This makes Next.js pre-build all course pages.
- * Exactly like Nexorith.
- */
 export async function generateStaticParams() {
-  return courses.map((c) => ({ slug: c.slug }));
+  return courses.map((course) => ({ slug: course.slug }));
 }
