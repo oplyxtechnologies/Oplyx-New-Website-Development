@@ -1,26 +1,24 @@
+// ✅ [slug]/page.tsx
+
 import { Book, Gauge, Globe, Star, Timer, UserPen } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import courses from "@/components/data/course.json";
 import CurriculumToggle from "@/components/course/CurriculumToggle";
 import Image from "next/image";
 
-export default async function CoursePage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  // ✅ Use inline typing for params
-  const { slug } = params;
+import courses from "@/components/data/course.json"; // your static JSON
 
-  const course = courses.find((c) => c.slug === slug);
-
+/**
+ * ✅ Correct props: params is NOT a Promise.
+ */
+export default function Page({ params }: { params: { slug: string } }) {
+  const course = courses.find((c) => c.slug === params.slug);
   if (!course) return notFound();
 
   return (
     <main className="bg-[#0a0d12] mt-10 min-h-screen px-6 md:px-12 py-16 text-white">
       <div className="max-w-6xl mx-auto grid md:grid-cols-[2fr_1fr] gap-12">
-        {/* ✅ LEFT CONTENT */}
+        {/* LEFT CONTENT */}
         <div>
           <h1 className="text-3xl md:text-4xl font-bold mb-2">
             {course.title}
@@ -86,7 +84,7 @@ export default async function CoursePage({
           </div>
         </div>
 
-        {/* ✅ FIXED SIDEBAR */}
+        {/* ✅ RIGHT SIDEBAR */}
         <div className="relative">
           <div className="md:sticky md:top-24 border border-white/20 p-6 rounded-lg shadow-sm bg-white/5 backdrop-blur-sm">
             <h3 className="text-2xl font-bold mb-4">Rs. {course.price}</h3>
@@ -100,31 +98,31 @@ export default async function CoursePage({
               <li className="flex items-center justify-between">
                 <div className="flex gap-2">
                   <Book size={20} /> Lectures
-                </div>{" "}
+                </div>
                 {course.lectures}
               </li>
               <li className="flex items-center justify-between">
                 <div className="flex gap-2">
                   <Timer size={20} /> Duration
-                </div>{" "}
+                </div>
                 {course.duration}
               </li>
               <li className="flex items-center justify-between">
                 <div className="flex gap-2">
                   <Gauge size={20} /> Level:
-                </div>{" "}
+                </div>
                 {course.level}
               </li>
               <li className="flex items-center justify-between">
                 <div className="flex gap-2">
                   <UserPen size={20} /> Instructor:
-                </div>{" "}
+                </div>
                 {course.instructor.name}
               </li>
               <li className="flex items-center justify-between">
                 <div className="flex gap-2">
                   <Globe size={20} /> Language:
-                </div>{" "}
+                </div>
                 English, Nepali
               </li>
             </ul>
@@ -133,4 +131,12 @@ export default async function CoursePage({
       </div>
     </main>
   );
+}
+
+/**
+ * ✅ This makes Next.js pre-build all course pages.
+ * Exactly like Nexorith.
+ */
+export async function generateStaticParams() {
+  return courses.map((c) => ({ slug: c.slug }));
 }
