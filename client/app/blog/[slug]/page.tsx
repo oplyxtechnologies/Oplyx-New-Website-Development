@@ -11,11 +11,11 @@ export async function generateMetadata({
 }: SlugProps): Promise<Metadata> {
   const { slug } = await params;
   const res = await fetch(`https://api.vercel.app/blog/${slug}`);
-  const post = await res.json();
+  const blog = await res.json();
 
   return {
-    title: `${post.title} | Oplyx Blog`,
-    description: post.description,
+    title: `${blog.title} | Oplyx Blog`,
+    description: blog.description,
   };
 }
 
