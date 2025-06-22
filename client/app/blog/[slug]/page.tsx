@@ -9,9 +9,7 @@ type SlugProps = { params: Promise<{ slug: string }> };
 export async function generateMetadata({
   params,
 }: SlugProps): Promise<Metadata> {
-  const { slug } = await params;
-  const res = await fetch(`https://api.vercel.app/blog/${slug}`);
-  const blog = await res.json();
+  const { blog } = (await params).slug;
 
   return {
     title: `${blog.title} | Oplyx Blog`,
