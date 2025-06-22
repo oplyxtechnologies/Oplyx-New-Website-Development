@@ -1,33 +1,29 @@
 "use client";
 
 import { useState } from "react";
+import blogs from "@/lib/data/blogs.json";
 
 const categories = [
   "All",
-  "Design",
-  "Development",
-  "Product",
-  "Team",
-  "Data & AI",
-  "Devops",
-  "Life at Oplyx",
-  "Health Care",
-];
-
-const posts = [
-  {
-    title: "Oplyx Achieves SOC 2 Type II Compliance",
-    description: "Achieving SOC 2 Type II compliance is a significant step...",
-    tag: "Press",
-    href: "/press/security",
-  },
+  "Business",
+  "IT",
+  "Nepal",
+  "Digital",
+  "Strategy",
+  "Tech",
 ];
 
 export default function BlogTabsSection() {
   const [activeTab, setActiveTab] = useState("All");
 
   const filteredPosts =
-    activeTab === "All" ? posts : posts.filter((p) => p.tag === activeTab);
+    activeTab === "All"
+      ? blogs
+      : blogs.filter((b) =>
+          b.tags
+            .map((tag) => tag.toLowerCase())
+            .includes(activeTab.toLowerCase())
+        );
 
   return (
     <section className="py-20 px-6 md:px-12 text-white">
@@ -53,18 +49,18 @@ export default function BlogTabsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {filteredPosts.map((post) => (
             <a
-              key={post.href}
-              href={post.href}
+              key={post.slug}
+              href={`/blog/${post.slug}`}
               className="block bg-white/5 border border-white/10 rounded-lg p-6 hover:bg-white/10 transition"
             >
               <span className="inline-block text-xs px-2 py-1 bg-white text-black font-medium rounded mb-3">
-                {post.tag}
+                {post.tags[0]}
               </span>
               <h3 className="text-lg font-semibold mb-3 leading-snug">
                 {post.title}
               </h3>
               <h3 className="text-xs text-white/60 mb-3 leading-snug">
-                {post.description}
+                {post.excerpt}
               </h3>
               <span className="text-sm text-white/70">Read More →</span>
             </a>
