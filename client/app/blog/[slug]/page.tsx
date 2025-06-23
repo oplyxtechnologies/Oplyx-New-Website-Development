@@ -1,21 +1,9 @@
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import blogs from "@/lib/data/blogs.json";
 import Image from "next/image";
 
 type SlugProps = { params: Promise<{ slug: string }> };
-
-export async function generateMetadata({
-  params,
-}: SlugProps): Promise<Metadata> {
-  const { blog } = (await params).slug;
-
-  return {
-    title: `${blog.title} | Oplyx Blog`,
-    description: blog.description,
-  };
-}
 
 export default async function BlogPage({ params }: SlugProps) {
   const { slug } = await params;
