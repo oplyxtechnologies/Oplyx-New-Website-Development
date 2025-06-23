@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import Script from "next/script";
-
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { Toaster } from "react-hot-toast";
@@ -90,18 +89,44 @@ export default function RootLayout({
         />
 
         {/* ✅ Google Tag Manager SCRIPT */}
-        <Script id="gtm-init" strategy="afterInteractive">
-          {`
-        (function(w,d,s,l,i){w[l]=w[l]||[];
-          w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-          var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-          j.async=true; j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-          f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-T2K57XVZ');
-      `}
-        </Script>
+        <Script
+          id="gtm-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){
+                w[l]=w[l]||[];
+                w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+                j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-T2K57XVZ');
+            `,
+          }}
+        />
+
+        {/* ✅ Google Analytics SCRIPT */}
+        <Script
+          id="gtag-script"
+          strategy="afterInteractive"
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-P53G7E45SK"
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-P53G7E45SK');
+            `,
+          }}
+        />
       </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${Sora.variable} font-semibold antialiased text-gray-900`}
       >
@@ -116,9 +141,7 @@ export default function RootLayout({
         </noscript>
 
         <Navbar />
-
         {children}
-
         <Toaster position="top-center" />
         <Footer />
       </body>
