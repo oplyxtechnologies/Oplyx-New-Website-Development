@@ -41,14 +41,15 @@ const footerLinks = [
       // { name: "Life At Oplyx", href: "/life-at-oplyx" },
     ],
   },
-  // {
-  //   heading: "More",
-  //   links: [
-  //     { name: "Oplyx Brand", href: "/brand" },
-  //     { name: "Education Mission", href: "/education" },
-  //     { name: "Student Partnership", href: "/student-partnership" },
-  //   ],
-  // },
+  {
+    heading: "More",
+    links: [
+      // { name: "Oplyx Brand", href: "/brand" },
+      // { name: "Education Mission", href: "/education" },
+      // { name: "Student Partnership", href: "/student-partnership" },
+      { name: "Courses", href: "/courses" },
+    ],
+  },
 ];
 
 const Footer = () => {

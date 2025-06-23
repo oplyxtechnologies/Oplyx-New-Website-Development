@@ -11,15 +11,13 @@ import { notFound } from "next/navigation";
 import CurriculumToggle from "@/components/course/CurriculumToggle";
 import Image from "next/image";
 
-import courses from "@/components/data/course.json"; // your static JSON
+import courses from "@/lib/data/course.json"; // your static JSON
 
-// Updated type definition for Next.js 15
 type PageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export default async function Page({ params }: PageProps) {
-  // Await the params Promise
   const { slug } = await params;
   const course = courses.find((c) => c.slug === slug);
   if (!course) return notFound();
@@ -99,7 +97,6 @@ export default async function Page({ params }: PageProps) {
           </div>
         </div>
 
-        {/* ✅ RIGHT SIDEBAR */}
         <div className="relative">
           <div className="md:sticky md:top-24 border border-white/20 p-6 rounded-lg shadow-sm bg-white/5 backdrop-blur-sm">
             <h3 className="text-2xl font-bold mb-4">Rs. {course.price}</h3>
