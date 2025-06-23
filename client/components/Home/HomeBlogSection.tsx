@@ -14,17 +14,17 @@ const blogPosts: BlogPost[] = [
   {
     title: "Minimalist UI: Why Less Really Is More",
     category: "Design",
-    slug: "/blog/minimalist-ui",
+    slug: "/blog/Minimalist-UI-Why-Less-Really-Is-More",
   },
   {
     title: "Choosing the Right Tech Stack for Your Startup",
     category: "Development",
-    slug: "/blog/tech-stack-startup",
+    slug: "/blog/choosing-the-right-tech-stack-for-your-startup",
   },
   {
     title: "How Smart Branding Builds Lasting Businesses",
     category: "Strategy",
-    slug: "/blog/branding-lasting-business",
+    slug: "/blog/how-smart-branding-builds-lasting-businesses",
   },
 ];
 

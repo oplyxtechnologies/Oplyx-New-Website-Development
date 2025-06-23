@@ -40,7 +40,7 @@ export default function HealthcareCaseStudy() {
             rollout across city clinics, mobile units, and telehealth support.
           </p>
           <Link
-            href="/case-studies/city-of-people-vaccination"
+            href="/blog/oplyx-helps-city-vaccinate-250000-citizens"
             className="inline-block text-green-400 font-semibold hover:underline mt-2"
           >
             Read More →

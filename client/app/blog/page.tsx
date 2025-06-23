@@ -11,6 +11,8 @@ const categories = [
   "Digital",
   "Strategy",
   "Tech",
+  "Design",
+  "Health Care",
 ];
 
 export default function BlogTabsSection() {
