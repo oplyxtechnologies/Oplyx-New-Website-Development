@@ -77,6 +77,8 @@ export default function BlogTabsSection() {
               <Image
                 src={post.heroImage}
                 alt={post.title}
+                width={600}
+                height={400}
                 className="w-full h-48 object-cover mb-4"
               />
 
