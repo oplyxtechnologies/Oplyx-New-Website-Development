@@ -1,4 +1,4 @@
-// import { Metadata } from "next";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import blogs from "@/lib/data/blogs.json";
@@ -6,16 +6,24 @@ import Image from "next/image";
 
 type SlugProps = { params: Promise<{ slug: string }> };
 
-// export async function generateMetadata({
-//   params,
-// }: SlugProps): Promise<Metadata> {
-//   const { blog } = (await params).slug;
+export async function generateMetadata({
+  params,
+}: SlugProps): Promise<Metadata> {
+  const { slug } = await params;
+  const blog = blogs.find((b) => b.slug === slug);
 
-//   return {
-//     title: `${blog.title} | Oplyx Blog`,
-//     description: blog.description,
-//   };
-// }
+  if (!blog) {
+    return {
+      title: "Blog Not Found | Oplyx Blog",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  return {
+    title: `${blog.title} | Oplyx Blog`,
+    description: blog.description,
+  };
+}
 
 export default async function BlogPage({ params }: SlugProps) {
   const { slug } = await params;
