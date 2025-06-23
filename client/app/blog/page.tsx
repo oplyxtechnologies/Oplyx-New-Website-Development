@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import blogs from "@/lib/data/blogs.json";
+import Image from "next/image";
 
 const categories = [
   "All",
@@ -73,7 +74,7 @@ export default function BlogTabsSection() {
               className="block bg-white/5 border border-white/10 rounded-lg overflow-hidden hover:bg-white/10 transition"
             >
               {/* ✅ Thumbnail */}
-              <img
+              <Image
                 src={post.heroImage}
                 alt={post.title}
                 className="w-full h-48 object-cover mb-4"
