@@ -1,10 +1,7 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import { UserPlus, FileDown, Trash2, Eye, X } from "lucide-react";
-import html2canvas from "html2canvas";
-import jsPDF from "jspdf";
-
+import React, { useState } from "react";
+import { UserPlus, FileDown, Trash2, X } from "lucide-react";
 import Modal from "react-modal";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -42,9 +39,7 @@ interface Employee extends Omit<FormData, "photo"> {
 
 export default function User() {
   const [employees, setEmployees] = useState<Employee[]>([]);
-  const [modalEmp, setModalEmp] = useState<Employee | null>(null);
   const [showFormModal, setShowFormModal] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
 
   const { register, handleSubmit, control, reset } = useForm<FormData>({
     resolver: zodResolver(schema),
@@ -90,9 +85,6 @@ END:VCARD`;
     reader.readAsDataURL(data.photo[0]);
   };
 
-  const openModal = (emp: Employee) => setModalEmp(emp);
-  const closeModal = () => setModalEmp(null);
-
   const downloadCSV = () => {
     if (!employees.length) return;
     const keys = Object.keys(employees[0]).filter(
@@ -109,41 +101,6 @@ END:VCARD`;
     link.href = URL.createObjectURL(blob);
     link.download = "employees.csv";
     link.click();
-  };
-
-  const downloadPdf = async () => {
-    if (cardRef.current) {
-      const canvas = await html2canvas(cardRef.current, { useCORS: true });
-      const pdf = new jsPDF({
-        orientation: "landscape",
-        unit: "px",
-        format: [canvas.width, canvas.height] as [number, number],
-      });
-      pdf.addImage(
-        canvas.toDataURL("image/png"),
-        "PNG",
-        0,
-        0,
-        canvas.width,
-        canvas.height
-      );
-      pdf.save(`${modalEmp?.name}_ID_Card.pdf`);
-    }
-  };
-
-  const printCard = () => {
-    if (cardRef.current) {
-      const win = window.open("", "", "width=600,height=400");
-      if (win) {
-        win.document.write("<html><head><title>ID Card</title></head><body>");
-        win.document.write(cardRef.current.outerHTML);
-        win.document.write("</body></html>");
-        win.document.close();
-        win.focus();
-        win.print();
-        win.close();
-      }
-    }
   };
 
   return (
@@ -197,12 +154,6 @@ END:VCARD`;
               </div>
               <div className="flex gap-2 mt-4">
                 <button
-                  onClick={() => openModal(emp)}
-                  className="border px-4 py-2 border-blue-500 text-blue-500 rounded hover:bg-blue-500 hover:text-white"
-                >
-                  <Eye size={16} /> View ID
-                </button>
-                <button
                   onClick={() =>
                     setEmployees((prev) => prev.filter((e) => e.id !== emp.id))
                   }
@@ -220,13 +171,13 @@ END:VCARD`;
         </p>
       )}
 
-      {/* Add Employee Form Modal */}
+      {/* Modal */}
       <Modal
         isOpen={showFormModal}
         onRequestClose={() => setShowFormModal(false)}
         ariaHideApp={false}
-        className="relative w-full max-w-3xl mx-auto bg-[#1c1f24] p-6 rounded shadow-lg overflow-y-auto max-h-[90vh]"
-        overlayClassName="fixed inset-0 bg-black/70 flex items-center justify-center p-4"
+        className="w-full max-w-3xl bg-[#1c1f24] rounded-lg p-6 outline-none overflow-y-auto max-h-[90vh]"
+        overlayClassName="fixed inset-0 bg-black/70 flex items-center justify-center p-4 z-50"
       >
         <button
           onClick={() => setShowFormModal(false)}
@@ -241,29 +192,29 @@ END:VCARD`;
           onSubmit={handleSubmit(onSubmit)}
           className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white"
         >
-          {/* PERSONAL INFO */}
+          {/* --- Personal Details --- */}
           <input
             {...register("name")}
             placeholder="Full Name"
-            className="w-full px-4 py-3 rounded border border-[#2a2d31] bg-[#121417]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           />
           <input
             {...register("jobRole")}
             placeholder="Job Role"
-            className="w-full px-4 py-3 rounded border border-[#2a2d31] bg-[#121417]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           />
           <input
             {...register("department")}
             placeholder="Department"
-            className="w-full px-4 py-3 rounded border border-[#2a2d31] bg-[#121417]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           />
           <input
             {...register("address")}
             placeholder="Address"
-            className="w-full px-4 py-3 rounded border border-[#2a2d31] bg-[#121417]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           />
 
-          {/* CONTACT */}
+          {/* --- Contact Info --- */}
           <Controller
             name="phone"
             control={control}
@@ -272,8 +223,7 @@ END:VCARD`;
                 country="np"
                 value={field.value}
                 onChange={field.onChange}
-                placeholder="Phone Number"
-                inputClass="!w-full !bg-[#121417] !border-[#2a2d31] !text-white !px-4 !h-12 !py-3 !rounded"
+                inputClass="!w-full !bg-[#121417] !border-[#2a2d31] !text-white !px-4 !h-12 !py-3 !rounded-md !focus:border-emerald-500"
                 buttonClass="!bg-[#2a2d31] !border-[#2a2d31]"
                 containerClass="!w-full"
               />
@@ -282,54 +232,56 @@ END:VCARD`;
           <input
             {...register("emergencyContact")}
             placeholder="Emergency Contact"
-            className="w-full px-4 py-3 rounded border border-[#2a2d31] bg-[#121417]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           />
           <input
             {...register("email")}
             placeholder="Email Address"
-            className="w-full px-4 py-3 rounded border border-[#2a2d31] bg-[#121417]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           />
 
-          {/* BANK DETAILS */}
+          {/* --- Financial Info --- */}
           <input
             {...register("salary")}
             placeholder="Salary"
-            className="w-full px-4 py-3 rounded border border-[#2a2d31] bg-[#121417]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           />
           <input
             {...register("bankName")}
             placeholder="Bank Name"
-            className="w-full px-4 py-3 rounded border border-[#2a2d31] bg-[#121417]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           />
           <input
             {...register("bankAccount")}
             placeholder="Bank Account Number"
-            className="w-full px-4 py-3 rounded border border-[#2a2d31] bg-[#121417]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           />
           <input
             {...register("pan")}
             placeholder="PAN Number"
-            className="w-full px-4 py-3 rounded border border-[#2a2d31] bg-[#121417]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           />
+
+          {/* --- ID Details --- */}
           <input
             {...register("idNumber")}
             placeholder="ID Number"
-            className="w-full px-4 py-3 rounded border border-[#2a2d31] bg-[#121417]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           />
-
-          {/* SELECT DROPDOWNS */}
           <select
             {...register("idType")}
-            className="w-full px-4 py-3 rounded border bg-[#121417] border-[#2a2d31]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           >
             <option>Citizenship</option>
             <option>Passport</option>
             <option>National ID</option>
             <option>Driving License</option>
           </select>
+
+          {/* --- Role & Status --- */}
           <select
             {...register("userRole")}
-            className="w-full px-4 py-3 rounded border bg-[#121417] border-[#2a2d31]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           >
             <option>Employee</option>
             <option>Admin</option>
@@ -337,24 +289,24 @@ END:VCARD`;
           </select>
           <select
             {...register("status")}
-            className="w-full px-4 py-3 rounded border bg-[#121417] border-[#2a2d31]"
+            className="bg-[#121417] border border-[#2a2d31] focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 px-4 py-3 rounded-md w-full"
           >
             <option>Active</option>
             <option>Resigned</option>
             <option>On Leave</option>
           </select>
 
-          {/* FILE UPLOAD */}
+          {/* --- Upload --- */}
           <input
             type="file"
             {...register("photo")}
-            className="w-full px-4 py-3 rounded border border-[#2a2d31] bg-[#121417] text-gray-400 md:col-span-2"
+            className="text-gray-400 file:bg-emerald-700 file:text-white file:border-0 file:px-4 file:py-2 file:rounded-md border border-[#2a2d31] rounded-md bg-[#121417] w-full md:col-span-2"
           />
 
-          {/* SUBMIT */}
+          {/* --- Submit Button --- */}
           <button
             type="submit"
-            className="w-full bg-green-600 py-3 rounded md:col-span-2"
+            className="w-full bg-green-600 py-3 rounded-md hover:bg-green-700 transition-all md:col-span-2"
           >
             Save Employee
           </button>
