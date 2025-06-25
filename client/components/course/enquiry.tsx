@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 export default function StudentEnquiryForm() {
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     email: "",
-    phone: "",
+    phoneNumber: "",
     course: "",
     message: "",
   });
@@ -24,18 +25,26 @@ export default function StudentEnquiryForm() {
     e.preventDefault();
     setSubmitting(true);
     try {
-      const res = await fetch("/api/student-enquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/enquiry/submit-course-enquiry`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
       const data = await res.json();
       if (data.success) {
-        alert("Thank you! We’ll get in touch soon.");
+        Swal.fire({
+          title: "Enquiry Submitted!",
+          text: "Thank you! We'll get back to you shortly ",
+          icon: "success",
+          draggable: true,
+        });
         setFormData({
-          name: "",
+          fullName: "",
           email: "",
-          phone: "",
+          phoneNumber: "",
           course: "",
           message: "",
         });
@@ -62,9 +71,9 @@ export default function StudentEnquiryForm() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
-            name="name"
+            name="fullName"
             placeholder="Full Name"
-            value={formData.name}
+            value={formData.fullName}
             onChange={handleChange}
             required
             className="w-full p-3 rounded bg-white/5 text-white placeholder-white/50"
@@ -80,9 +89,9 @@ export default function StudentEnquiryForm() {
           />
           <input
             type="tel"
-            name="phone"
+            name="phoneNumber"
             placeholder="Phone Number"
-            value={formData.phone}
+            value={formData.phoneNumber}
             onChange={handleChange}
             required
             className="w-full p-3 rounded bg-white/5 text-white placeholder-white/50"
