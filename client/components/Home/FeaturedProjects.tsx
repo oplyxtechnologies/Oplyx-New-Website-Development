@@ -48,7 +48,7 @@ const FeaturedProjects = () => {
               Handpicked case studies showing our impact
             </p>
           </div>
-          <Link href="/projects">
+          <Link href="/success-stories">
             <button className="border border-white text-white px-5 py-2 rounded-md hover:bg-white hover:text-black transition">
               Explore More
             </button>

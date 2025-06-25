@@ -151,7 +151,7 @@ export default function DesignFeedbackAndWork() {
             ))}
           </div>
 
-          <Link href="/projects">
+          <Link href="/success-stories">
             <button className="mt-10 border border-white text-white px-6 py-2 rounded hover:bg-white hover:text-black transition font-medium">
               View More Projects →
             </button>

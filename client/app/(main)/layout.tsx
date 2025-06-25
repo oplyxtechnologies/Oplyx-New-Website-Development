@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
-import "./globals.css";
+import "../globals.css";
 import Script from "next/script";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import { Toaster } from "react-hot-toast";
+import { headers } from "next/headers";
 
 // === FONTS ===
 const Sora = localFont({
   src: [
-    { path: "../public/font/Sora-Thin.woff2", weight: "100" },
-    { path: "../public/font/Sora-ExtraLight.woff2", weight: "200" },
-    { path: "../public/font/Sora-Light.woff2", weight: "300" },
-    { path: "../public/font/Sora-Regular.woff2", weight: "400" },
-    { path: "../public/font/Sora-Medium.woff2", weight: "500" },
-    { path: "../public/font/Sora-SemiBold.woff2", weight: "600" },
-    { path: "../public/font/Sora-Bold.woff2", weight: "700" },
-    { path: "../public/font/Sora-ExtraBold.woff2", weight: "800" },
+    { path: "../../public/font/Sora-ExtraLight.woff2", weight: "200" },
+    { path: "../../public/font/Sora-Light.woff2", weight: "300" },
+    { path: "../../public/font/Sora-Thin.woff2", weight: "100" },
+    { path: "../../public/font/Sora-Regular.woff2", weight: "400" },
+    { path: "../../public/font/Sora-Medium.woff2", weight: "500" },
+    { path: "../../public/font/Sora-SemiBold.woff2", weight: "600" },
+    { path: "../../public/font/Sora-Bold.woff2", weight: "700" },
+    { path: "../../public/font/Sora-ExtraBold.woff2", weight: "800" },
   ],
   variable: "--font-sora",
   display: "swap",
@@ -63,12 +64,17 @@ export const metadata: Metadata = {
   },
 };
 
-// === ROOT LAYOUT ===
-export default function RootLayout({
+// === ✅ MAKE IT ASYNC ===
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // ✅ Properly await headers()
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") || "";
+  const isDashboard = pathname.startsWith("/dashboard");
+
   return (
     <html lang="en" className="scroll-smooth">
       <head>
@@ -88,7 +94,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* ✅ Google Tag Manager SCRIPT */}
+        {/* ✅ Google Tag Manager */}
         <Script
           id="gtm-init"
           strategy="afterInteractive"
@@ -99,14 +105,15 @@ export default function RootLayout({
                 w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
                 var f=d.getElementsByTagName(s)[0],
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-                j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                j.async=true;
+                j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
                 f.parentNode.insertBefore(j,f);
               })(window,document,'script','dataLayer','GTM-T2K57XVZ');
             `,
           }}
         />
 
-        {/* ✅ Google Analytics SCRIPT */}
+        {/* ✅ Google Analytics */}
         <Script
           id="gtag-script"
           strategy="afterInteractive"
@@ -140,10 +147,12 @@ export default function RootLayout({
           ></iframe>
         </noscript>
 
-        <Navbar />
+        {/* ✅ Conditional navbar/footer */}
+        {!isDashboard && <Navbar />}
         {children}
+        {!isDashboard && <Footer />}
+
         <Toaster position="top-center" />
-        <Footer />
       </body>
     </html>
   );
