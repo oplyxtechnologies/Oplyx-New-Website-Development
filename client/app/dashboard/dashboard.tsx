@@ -38,7 +38,7 @@ export default function Dashboard() {
       {/* Top bar */}
       <div className="flex items-center justify-between px-4 py-4 border-b border-[#2a2d31]">
         {!collapsed && (
-          <span className="text-xl font-bold text-white">Oplyx</span>
+          <span className="text-xl font-bold text-white">Oplyx Portal</span>
         )}
         <button
           onClick={() => setCollapsed(!collapsed)}
