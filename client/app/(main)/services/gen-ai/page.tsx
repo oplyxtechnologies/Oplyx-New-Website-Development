@@ -7,6 +7,13 @@ import GenAiBenefitsSection from "@/components/Gen-ai/GenAiBusinessBenifits";
 import GenAiIntegrateSection from "@/components/Gen-ai/GenAiIntegrateSection";
 import GenAiCTASection from "@/components/Gen-ai/GenAiCTASection";
 
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Oplyx Gen AI Services",
+  description:
+    "Explore Oplyx's Gen AI services, offering advanced AI solutions for businesses. Learn about our use cases, tools, and benefits of integrating AI into your operations.",
+};
+
 export default function GenAiPage() {
   return (
     <div className="relative bg-gradient-to-t from-[#0b1b38] from-0% to-[#542525]/0 to-10% ">

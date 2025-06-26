@@ -6,6 +6,12 @@ import DesignTestimonials from "@/components/design/DesignTestimonials";
 import WhyChooseOplyxForDesign from "@/components/design/WhyChooseOplyxForDesign";
 import WhyGreatDesignMatters from "@/components/design/WhyGreateDesignsMatters";
 import Image from "next/image";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Oplyx Design Services",
+  description:
+    "Explore Oplyx's design services, including UI/UX design, branding, and product design. Learn how we create exceptional user experiences.",
+};
 
 export default function designpage() {
   return (

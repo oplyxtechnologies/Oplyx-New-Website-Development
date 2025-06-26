@@ -5,6 +5,13 @@ import SecurityHero from "@/components/Security-Compailance/SecurityHero";
 import SecurityPrinciples from "@/components/Security-Compailance/SecurityPrinciples";
 import Image from "next/image";
 
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Oplyx Security & Compliance",
+  description:
+    "Explore Oplyx's commitment to security and compliance with industry standards. Learn about our security principles, compliance frameworks, and latest updates.",
+};
+
 export default function SecurityCompliancePage() {
   return (
     <div className="relative">

@@ -9,6 +9,13 @@ import InfraLoopSection from "@/components/devopscloud/InfraLoopSection";
 import OptimizedSdlcTimeline from "@/components/devopscloud/OptimizedSdlcTimeline";
 import Image from "next/image";
 
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Oplyx DevOps Cloud Services",
+  description:
+    "Explore Oplyx's DevOps Cloud Services, offering optimized SDLC, cloud value propositions, and a partnership with AWS for enhanced efficiency and innovation.",
+};
+
 export default function DevopsCloudPage() {
   return (
     <div className="relative bg-gradient-to-t from-[#0b1b26] from-0% to-[#542525]/0 to-10% ">

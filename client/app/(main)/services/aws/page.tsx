@@ -7,6 +7,13 @@ import FlexibleEngagementModels from "@/components/aws/FlexibleEngagementModels"
 import ToolsAndTechSection from "@/components/aws/ToolsAndTechSection";
 import WhyPartnerAws from "@/components/aws/WhyPartnerAWS";
 
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Oplyx AWS Partnership",
+  description:
+    "Explore Oplyx's partnership with AWS, offering cloud solutions, DevOps services, and flexible engagement models to drive innovation and efficiency.",
+};
+
 export default function AWSpage() {
   return (
     <div>

@@ -13,6 +13,29 @@ import Image from "next/image";
 
 import courses from "@/lib/data/course.json"; // your static JSON
 
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const course = courses.find((c) => c.slug === slug);
+
+  if (!course) {
+    return {
+      title: "Course Not Found | Oplyx Courses",
+      description: "The requested course could not be found.",
+    };
+  }
+
+  return {
+    title: `${course.title} | Oplyx Courses`,
+    description: course.description,
+  };
+}
+
 type PageProps = {
   params: Promise<{ slug: string }>;
 };

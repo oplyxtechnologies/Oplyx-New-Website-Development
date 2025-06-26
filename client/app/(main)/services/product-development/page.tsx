@@ -8,6 +8,13 @@ import WhyChooseProductOplyx from "@/components/ProductDevelopnent/WhyChooseProd
 import ProductCaseStudies from "@/components/ProductDevelopnent/ProductCaseStudies";
 import ProductFinalCTA from "@/components/ProductDevelopnent/ProductFinalCTA";
 
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Oplyx Product Development Services",
+  description:
+    "Explore Oplyx's product development services, including product design, development, and case studies. Learn how we help businesses build innovative products.",
+};
+
 export default function productDevelopmentPage() {
   return (
     <div className="relative bg-gradient-to-t from-[#0b1b38] from-0% to-[#542525]/0 to-10% ">

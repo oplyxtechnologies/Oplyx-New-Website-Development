@@ -6,6 +6,12 @@ import AiHumanSuperpowers from "@/components/AiData/AIHumanSuperPower";
 import AiToolsGridSection from "@/components/AiData/AITollGridSection";
 import WhyChooseOplyxAi from "@/components/AiData/WhyChooseOplyxAI";
 import Image from "next/image";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Oplyx AI Data Services",
+  description:
+    "Discover Oplyx's AI Data Services, empowering businesses with advanced data solutions and human-AI collaboration.",
+};
 
 export default function AIDatepage() {
   return (

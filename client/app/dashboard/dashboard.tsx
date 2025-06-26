@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Logsheet from "./logsheet";
 import Enquiry from "./enquiry";
-import User from "./User"; // ✅ your client component
+import User from "./User";
 import {
   FileText,
   Inbox,

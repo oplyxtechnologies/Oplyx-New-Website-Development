@@ -2,6 +2,12 @@ import AboutHero from "@/components/About/AboutHero";
 import CoreValuesSection from "@/components/About/CoreValuesSection";
 import MissionSection from "@/components/About/VisionMissionSection";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Oplyx",
+  description: "Learn more about Oplyx, our mission, and core values.",
+};
 
 export default function About() {
   return (

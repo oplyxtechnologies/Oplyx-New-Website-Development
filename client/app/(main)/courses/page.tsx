@@ -5,6 +5,13 @@ import HeroCourse from "@/components/course/CourseHero";
 import FeaturedCourses from "@/components/course/FeaturedCourses";
 import HowItWorks from "@/components/course/HowItWorks";
 
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Oplyx Courses",
+  description:
+    "Explore our range of courses designed to enhance your skills and knowledge.",
+};
+
 export default function CoursePage() {
   return (
     <div className="bg-[#0a0d12]">

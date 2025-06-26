@@ -6,6 +6,13 @@ import MentorshipBenefits from "@/components/Fellowship/MentorshipBenefits";
 import WhatYouWillLearn from "@/components/Fellowship/WhatYouWillLearn";
 import WhoShouldApply from "@/components/Fellowship/WhoShouldApply";
 
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Oplyx Fellowship Program",
+  description:
+    "Join the Oplyx Fellowship Program to enhance your skills, gain mentorship, and contribute to innovative projects.",
+};
+
 export default function Fellowship() {
   return (
     <div className="bg-[#020208]  ">
