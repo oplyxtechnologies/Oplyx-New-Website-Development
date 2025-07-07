@@ -1,7 +1,7 @@
 [
   {
     "slug": "mern-stack",
-    "title": "MERN Stack Development",
+    "title": "Diplome course in MERN Stack Development",
     "price": 17999,
     "description": "Master MongoDB, Express, React, and Node.js to build full-stack web apps with real projects.",
     "longDescription": "Dive deep into the world of full-stack development with the powerful MERN stack. This course equips you with practical skills through real-world projects, covering best practices, architecture patterns, and deployment workflows. Perfect for intermediate learners looking to build production-grade applications.",
@@ -132,7 +132,7 @@
   },
   {
     "slug": "graphics-design",
-    "title": "Graphics Design Diploma Mastery Course",
+    "title": "Diploma Course in Graphics Design",
     "price": 14999,
     "description": "Learn modern graphic design: typography, color theory, layout & branding using real tools.",
     "longDescription": "Unlock your creativity and master visual communication with our comprehensive graphics design course. Covering design principles, branding, and hands-on tools like Adobe Illustrator and Photoshop, this program prepares you to craft stunning visuals for real brands.",

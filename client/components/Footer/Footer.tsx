@@ -135,8 +135,21 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="border-t border-white/10 mt-12 pt-6 text-center text-white/50 text-xs font-sans">
-        © 2025 Oplyx Technologies. All Rights Reserved
+      <div className="border-t flex flex-wrap mx-auto justify-between border-white/10 mt-12 pt-6 text-center text-white/50 text-xs font-sans">
+        <p>
+          © {new Date().getFullYear()} Oplyx Technologies. All Rights Reserved
+        </p>
+
+        <div className="flex flex-wrap gap-4">
+          <Link href="/policies/terms" className="hover:underline">
+            {" "}
+            Terms of Services
+          </Link>
+          <Link href="/policies/privacy" className="hover:underline">
+            {" "}
+            Privacy Policy
+          </Link>
+        </div>
       </div>
     </footer>
   );
