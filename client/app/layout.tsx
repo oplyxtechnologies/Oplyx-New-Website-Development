@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import localFont from "next/font/local";
-import "../globals.css";
+import "./globals.css";
 import Script from "next/script";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
@@ -11,14 +11,14 @@ import { headers } from "next/headers";
 // === FONTS ===
 const Sora = localFont({
   src: [
-    { path: "../../public/font/Sora-ExtraLight.woff2", weight: "200" },
-    { path: "../../public/font/Sora-Light.woff2", weight: "300" },
-    { path: "../../public/font/Sora-Thin.woff2", weight: "100" },
-    { path: "../../public/font/Sora-Regular.woff2", weight: "400" },
-    { path: "../../public/font/Sora-Medium.woff2", weight: "500" },
-    { path: "../../public/font/Sora-SemiBold.woff2", weight: "600" },
-    { path: "../../public/font/Sora-Bold.woff2", weight: "700" },
-    { path: "../../public/font/Sora-ExtraBold.woff2", weight: "800" },
+    { path: "../public/font/Sora-ExtraLight.woff2", weight: "200" },
+    { path: "../public/font/Sora-Light.woff2", weight: "300" },
+    { path: "../public/font/Sora-Thin.woff2", weight: "100" },
+    { path: "../public/font/Sora-Regular.woff2", weight: "400" },
+    { path: "../public/font/Sora-Medium.woff2", weight: "500" },
+    { path: "../public/font/Sora-SemiBold.woff2", weight: "600" },
+    { path: "../public/font/Sora-Bold.woff2", weight: "700" },
+    { path: "../public/font/Sora-ExtraBold.woff2", weight: "800" },
   ],
   variable: "--font-sora",
   display: "swap",
