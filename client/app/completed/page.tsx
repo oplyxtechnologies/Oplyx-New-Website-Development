@@ -26,6 +26,13 @@ const completedProjects = [
     link: "https://pacifichunt.com/",
   },
   {
+    title: "Gentianes Solutions Ltd. - Much Better Adventures",
+    description:
+      "A travel booking platform for outdoor adventures. Features trip listings, booking management, and user reviews.",
+    image: "/completed/adventure.png",
+    link: "https://www.muchbetteradventures.com/",
+  },
+  {
     title: "Stuzip A wide variety of AI Books",
     description:
       "A comprehensive collection of AI books covering various topics and applications. Features book listings, reviews, and recommendations.",
